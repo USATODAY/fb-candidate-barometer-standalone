@@ -1,0 +1,14 @@
+div.non-article-content{
+  padding: 0 !important;
+}
+
+body, html, article {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+article {
+  padding: 0 !important;
+  width: 100% !important;
+}
