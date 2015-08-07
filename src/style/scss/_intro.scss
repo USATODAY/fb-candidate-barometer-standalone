@@ -1,0 +1,50 @@
+.iapp-intro-wrap {
+    background: url(http://www.gannett-cdn.com/experiments/usatoday/2015/08/fb-meter-standalone/img/wh.jpg) no-repeat center center fixed;
+    background-size: cover;
+    bottom: 0;
+    color: white;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 600;
+}
+
+.iapp-intro-bg-one, .iapp-intro-bg-two {
+    height: 50%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+.iapp-intro-bg-two {
+    background-color: transparentize($red2, 0.5);
+    bottom: 0;
+}
+
+.iapp-intro-bg-one {
+    background-color: transparentize($blue2, 0.5);
+    top: 0;
+}
+
+.iapp-intro-begin-button {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.iapp-intro-chatter {
+    font-family: "Futura Today Light", Arial, sans-serif;
+    margin: 2em auto  0 auto;
+    max-width: 500px;
+    text-align: center;
+    width: 90%;
+}
+
+.iapp-intro-header {
+    font-family: "Futura Today Light", Arial, sans-serif;
+    font-size: 2em;
+    margin: 2em auto;
+    text-align: center;
+    width: 90%;
+}

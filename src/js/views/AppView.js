@@ -6,8 +6,9 @@ define([
     'templates',
     'views/PoliticianIndexView',
     'views/EntriesView',
-    'views/InfoView'
-], function(jQuery, _, Backbone, config, templates, PoliticianIndexView, EntriesView, InfoView) {
+    'views/InfoView',
+    'views/IntroView'
+], function(jQuery, _, Backbone, config, templates, PoliticianIndexView, EntriesView, InfoView, IntroView) {
     return Backbone.View.extend({
         initialize: function() {
             this.listenTo(Backbone, "politician:set", this.setPolitician);
@@ -17,8 +18,8 @@ define([
         render: function() {
             this.$el.append("<div id='iapp-map-tooltip' class='iapp-hidden iapp-map-tooltip'><div>");
             this.$el.append("<img class='iapp-info-button' src='"+ config.imageDir +"info-icon.png' alt='info'>");
-            this.$el.append(this.headerTemplate());
             var infoView = new InfoView();
+            var introView = new IntroView();
             this.$el.append(infoView.el);
             var politicianIndexView = new PoliticianIndexView({collection: this.collection});
             this.$el.append(politicianIndexView.render().el);

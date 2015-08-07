@@ -334,22 +334,22 @@ module.exports = function(grunt) {
       },
       upload1: {
         files: {
-          // '/17200/experiments/usatoday/2015/07/fb-meter/': 'js/main.js'
+          '/17200/experiments/usatoday/2015/08/fb-meter-standalone/': 'js/main.js'
         }
       },
       upload2: {
         files: {
-          '/17200/experiments/usatoday/2015/07/fb-meter/': 'style/project.css'
+          '/17200/experiments/usatoday/2015/08/fb-meter-standalone/': 'style/project.css'
         }
       },
       upload3: {
         files: {
-          '/17200/experiments/usatoday/2015/07/fb-meter/': 'html/embed.html'
+          '/17200/experiments/usatoday/2015/08/fb-meter-standalone/': 'html/embed.html'
         }
       },
       upload4: {
         files: {
-          '/17200/experiments/usatoday/2015/07/fb-meter/': 'js/main-embed.js'
+          '/17200/experiments/usatoday/2015/08/fb-meter-standalone/': 'js/main-embed.js'
         }
       },
     },
@@ -381,6 +381,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['clean:dev', 'jst', 'jshint', 'requirejs:dev', 'sass:dev', 'autoprefixer:dev', 'copy:main', 'clean:tmp', 'browserSync:dev', 'watch']);
   grunt.registerTask('test', ['clean:dev', 'jst', 'jshint', 'requirejs:dev', 'sass:dev', 'autoprefixer:dev', 'copy:main', 'copy:test', 'clean:tmp', 'browserSync:test', 'watch']);
-  grunt.registerTask('build', ['clean:dev', 'jst', 'jshint', 'requirejs:embed', 'sass:build', 'autoprefixer:build', 'copy:main', 'clean:tmp']);
+  grunt.registerTask('build', ['clean:dev', 'jst', 'jshint', 'requirejs:deploy', 'requirejs:embed', 'sass:build', 'autoprefixer:build', 'copy:main', 'clean:tmp']);
   grunt.registerTask('deploy', ['build', 'copy:deploy', 'ftp:upload1', 'ftp:upload2', 'ftp:upload3', 'ftp:upload4', 'clean:deploy']);
 };

@@ -7,7 +7,7 @@ define(["jquery"], function(jQuery) {
     var dataURL = "";
     var dataDir = "http://www.gannett-cdn.com/experiments/usatoday/2015/07/fb-meter/data/";
     //set project image path here
-    var imageDir = "http://www.gannett-cdn.com/experiments/usatoday/2015/07/fb-meter/img/";
+    var imageDir = "http://www.gannett-cdn.com/experiments/usatoday/2015/08/fb-meter-standalone/img/";
 
     //set project default share language here
     var defaultShareLanguage = "";

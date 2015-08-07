@@ -1,23 +1,22 @@
 .iapp-politician-index-wrap {
+    background: white;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     max-height: 25px;
     overflow: hidden;
     padding: 25px 0 25px 0;
+    position: relative;
+    z-index: 505;
 }
 
 
 .iapp-politician-index {
     background-color: white;
     @include BoxShadowHelper(2);
-    position: absolute;
-    top: 170px;
+    position: relative;
     width: 100%;
-    z-index: 5;
-    @media(max-width: 950px) {
-        top: 120px;
-    }
+    z-index: 505;
 }
 
 .iapp-politician-index-show-button {
