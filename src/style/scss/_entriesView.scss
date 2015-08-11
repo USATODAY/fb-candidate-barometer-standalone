@@ -11,14 +11,9 @@
 }
 
 .iapp-entries-wrap {
-    height: 707px;
-    position: absolute;
-    top: 260px;
+    position: relative;
+    top: 0;
     width: 100%;
-
-    @media (max-width: 950px) {
-        top: 210px;
-    }
 }
 
 .iapp-entries-date-inner-wrap {

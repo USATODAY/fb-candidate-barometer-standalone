@@ -37,6 +37,18 @@ __p += '\n        </div>\n    </div>\n    <div class="iapp-entry-details-demogra
 return __p
 };
 
+this["templates"]["appView.html"] = function(obj) {
+obj || (obj = {});
+var __t, __p = '', __e = _.escape;
+with (obj) {
+__p += '<div class="iapp-app-header">\n    <div class="iapp-app-header-inner-wrap">\n         <h3 class="iapp-app-header-title">2016 USA TODAY/Facebook Candidate Barometer</h3>\n    </div>\n</div>\n\n<div id=\'iapp-map-tooltip\' class=\'iapp-hidden iapp-map-tooltip\'> </div>\n<img class=\'iapp-info-button\' src=\'' +
+((__t = (config.imageDir)) == null ? '' : __t) +
+'info-icon.png\' alt=\'info\'>\n';
+
+}
+return __p
+};
+
 this["templates"]["entriesView.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
@@ -89,7 +101,7 @@ this["templates"]["politicianIndex.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="iapp-politician-index-wrap"></div>\n<div class="iapp-politician-index-sort-buttons">\n    <span class="iapp-politician-index-sort-label">Sort by: </span>\n    <span class="iapp-politician-index-sort-button iapp-sort-button-name selected">Name</span>\n    <span class="iapp-politician-index-sort-button iapp-sort-button-trend">Trending</span>\n    <span class="iapp-politician-index-sort-button iapp-sort-button-party">Party</span>\n</div>\n<div class="iapp-politician-index-show-button">Select a candidate</div>\n\n';
+__p += '<div class="iapp-politician-index-show-button">Select a candidate</div>\n<div class="iapp-politician-index-wrap"></div>\n<div class="iapp-politician-index-sort-buttons">\n    <span class="iapp-politician-index-sort-label iapp-politician-index-sort-text">Sort by: </span>\n    <span class="iapp-politician-index-sort-button iapp-sort-button-name selected"> <span class="iapp-politician-index-sort-indicator"></span> <span class="iapp-politician-index-sort-text">Name</span></span>\n    <span class="iapp-politician-index-sort-button iapp-sort-button-trend"> <span class="iapp-politician-index-sort-indicator"></span> <span class="iapp-politician-index-sort-text">Trending</span></span>\n    <span class="iapp-politician-index-sort-button iapp-sort-button-party"> <span class="iapp-politician-index-sort-indicator"></span> <span class="iapp-politician-index-sort-text">Party</span></span>\n</div>\n\n\n';
 
 }
 return __p

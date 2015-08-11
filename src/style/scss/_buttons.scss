@@ -16,10 +16,10 @@
   width: 70px;
   &:hover{
     @include BoxShadowHelper(2);
-    border: solid 4px $dark-grey;
+    /* border: solid 4px $dark-grey; */
     color: white;
     cursor: pointer;
-    background-color: $dark-grey;
+    opacity: 1;
     svg {
         fill: white;
     }

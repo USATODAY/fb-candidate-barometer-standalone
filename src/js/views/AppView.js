@@ -4,27 +4,34 @@ define([
     'backbone',
     'config', 
     'templates',
+    'helpers',
     'views/PoliticianIndexView',
     'views/EntriesView',
     'views/InfoView',
     'views/IntroView'
-], function(jQuery, _, Backbone, config, templates, PoliticianIndexView, EntriesView, InfoView, IntroView) {
+], function(jQuery, _, Backbone, config, templates, helpers, PoliticianIndexView, EntriesView, InfoView, IntroView) {
     return Backbone.View.extend({
         initialize: function() {
             this.listenTo(Backbone, "politician:set", this.setPolitician);
             this.render();
         },
         el: '.iapp-js-app',
+        template: templates["appView.html"],
         render: function() {
-            this.$el.append("<div id='iapp-map-tooltip' class='iapp-hidden iapp-map-tooltip'><div>");
-            this.$el.append("<img class='iapp-info-button' src='"+ config.imageDir +"info-icon.png' alt='info'>");
-            var infoView = new InfoView();
+            var context = helpers.makeContext({});
+            this.$el.append(this.template(context));
+
+
+            //intro View attaches itself to pre-rendered html
             var introView = new IntroView();
+
+            var infoView = new InfoView();
             this.$el.append(infoView.el);
+
             var politicianIndexView = new PoliticianIndexView({collection: this.collection});
             this.$el.append(politicianIndexView.render().el);
-            var testPolitician = this.collection.findWhere({id: 0});
-            this.setPolitician(testPolitician);
+            // var testPolitician = this.collection.findWhere({id: 0});
+            // this.setPolitician(testPolitician);
         },
         events: {
             "click .iapp-info-button": "onInfoClick"

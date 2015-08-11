@@ -18,6 +18,10 @@ body, html, article {
   width: 100%;
 }
 
+header, footer {
+    display: none;
+}
+
 article {
   font-family: "Futura Today Bold", Arial,sans-serif;
   font-size: 100%;
@@ -40,8 +44,7 @@ article {
 }
 
 .iapp-page-wrap {
-    height: 977px;
-    overflow: hidden;
+    /* overflow-y: auto; */
 }
 
 

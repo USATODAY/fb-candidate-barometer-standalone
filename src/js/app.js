@@ -25,6 +25,7 @@ define(
                     var overviewData = new DataManager(config.dataDir + "data.json");
                     jQuery(window).on("resize", function() {
                         Backbone.trigger("window:resize");
+                        sizeWrap();
                     });
                     overviewData.getData(function(data) {
                         var sortedPoliticians = _.sortBy(data.politicians, function(politician) {
@@ -34,6 +35,13 @@ define(
                         var politicianCollection = new PoliticianCollection(sortedPoliticians);
                         new AppView({collection: politicianCollection});
                     });
+
+                    function sizeWrap() {
+                        var winHeight = window.innerHeight;
+                        jQuery('.iapp-page-wrap').height(winHeight);
+                    }
+
+                    sizeWrap();
                 });
         }
     };
