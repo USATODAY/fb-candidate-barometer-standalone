@@ -11,6 +11,7 @@ define([
     return Backbone.View.extend({
         initialize: function() {
             this.listenTo(Backbone, "menu:close", this.unExpand);
+            this.listenTo(Backbone, "menu:open", this.expand);
             this.listenTo(Backbone, "politician:set", this.politicianSet);
         },
         template: templates["politicianIndex.html"],
@@ -66,7 +67,8 @@ define([
             // this.$('.iapp-politician-index-wrap').velocity({"max-height": height.openHeight}, {duration: 400, easing: "swing"});
             // this.$el.addClass('expanded');
             // this.$('.iapp-politician-index-show-button').text("Select a candidate");
-            // this._expanded = true;
+            this.$el.velocity({"translateY": "0%"}, {duration: 400, easing: "swing"});
+            this._expanded = true;
         },
         unExpand: function() {
             // var height = this._getHeight();

@@ -1,7 +1,7 @@
 .iapp-entry-details {
-    background: $extra-light-grey;
+    background: $light-grey;
     display: table-cell;
-    float: right;
+    float: left;
     padding: 30px;
     width: 305px;
     height: 100%;
@@ -11,8 +11,8 @@
         padding: 15px 30px;
         width: 100%;
     }
-    &.republican { background: #FDF4F5;}
-    &.democrat { background: #EBF2F6;}
+    &.republican { background: linear-gradient(0deg, transparentize($red2, 0.8), transparentize(white, 0.2), transparentize($red2, 0.8)) white;}
+    &.democrat { background: linear-gradient(0deg, transparentize($blue2, 0.8), transparentize(white, 0.2), transparentize($blue2, 0.8)) white;}
 }
 
 .iapp-entry-details-header {
@@ -67,7 +67,11 @@
 
 
 .iapp-entry-wrapper {
+    @extend .group;
     height: calc(100%);
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
 }
 
 .iapp-entry-details-demographics {

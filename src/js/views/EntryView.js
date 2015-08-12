@@ -17,7 +17,7 @@ define([
             var context = helpers.makeContext(this.model.toJSON());
             this.$el.append(this.template(context));
             this.mapView = new MapView({model: this.model});
-            this.$el.prepend(this.mapView.el);
+            this.$el.append(this.mapView.el);
             this.drawDemoOverview();
             this.drawDemoDetails();
             return this;

@@ -68,7 +68,7 @@ __p += '\n        <span class="iapp-entries-date-next iapp-entries-date-selector
  print(config.imageDir + "right.png");
 __p += '" alt="right"></span>\n        ';
 };
-__p += '\n    </div>\n</div>\n';
+__p += '\n    </div>\n</div>\n<div class="iapp-entry"></div>\n<div class="iapp-entries-candidate-select-button">Select another candidate</div>\n';
 
 }
 return __p

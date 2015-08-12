@@ -39,13 +39,17 @@ define([
 
                 //make new entryView based on current entry model and render into view
                 var entryView = new EntryView({model: this.currentEntry});
-                this.$el.append(entryView.el);
+                this.$(".iapp-entry").append(entryView.el);
             }
             return this;
         },
         events: {
             "click .iapp-entries-date-previous": "goBack",
+            "click .iapp-entries-candidate-select-button": "onCandidateSelect",
             "click .iapp-entries-date-next": "goForward"
+        },
+        onCandidateSelect: function() {
+            Backbone.trigger("menu:open");
         },
         goBack: function() {
             //increment entry index and re-render
