@@ -15,23 +15,29 @@ __p += '\n        <div class="iapp-detail-summary slide">\n    ';
  } else {;
 __p += '\n        <div class="iapp-detail-summary">\n    ';
  } ;
-__p += '\n        <h2 class="iapp-entry-details-header">' +
+__p += '\n        <div class="iapp-politician-item-portrait ' +
+((__t = ( party )) == null ? '' : __t) +
+'">\n    <div class="iapp-politician-item-portrait-inner">\n        ';
+ if(party){ ;
+__p += '\n            <img src="';
+ print(config.imageDir + "/candidates/" + slug + ".jpg") ;
+__p += '" alt="' +
 ((__t = ( name )) == null ? '' : __t) +
-'</h2>\n        <h4 class="iapp-entry-details-subheader">Overall Facebook activity</h4>\n        <h3 class="iapp-entry-details-large-number">';
- print(interactions.toLocaleString()) ;
-__p += ' <span class="iapp-entry-details-large-number-unit">interactions</span></h3>\n        <div class="iapp-entry-details-trend">\n            ';
- if (total_interactions_diff) { ;
-__p += '\n            <img class="iapp-details-trend-icon" src="';
- print(config.imageDir + trend);
-__p += '.png" alt="' +
-((__t = ( trend )) == null ? '' : __t) +
-'"></span>\n            <span class="iapp-details-trend-detail">';
- trend == "down" ? print("Decreased") : print("Increased");
-__p += ' by ';
- print(Math.abs(total_interactions_diff).toLocaleString()) ;
-__p += '</span>\n            ';
+'">\n        ';
+ } else {;
+__p += '\n            <img src="';
+ print(config.imageDir + "/candidates/" + slug + ".png") ;
+__p += '" alt="' +
+((__t = ( name )) == null ? '' : __t) +
+'">\n        ';
  } ;
-__p += '\n        </div>\n    </div>\n    <div class="iapp-entry-details-demographics">\n        <div class="iapp-entry-details-demographics-overall">\n            <div class="iapp-entry-details-demographics-overall-headers">\n                <span class="iapp-demo-headers-female">Female</span>\n                <span class="iapp-demo-headers-male">Male</span>\n            </div>\n            <div class="iapp-entry-details-demographics-overview-bar iapp-js-entry-demo-overview"></div>\n        </div>\n        <div class="iapp-entry-details-demographics-details iapp-js-entry-demo-details"></div>\n    </div>\n</section>\n';
+__p += '\n    </div>\n</div>\n        <h2 class="iapp-entry-details-header">' +
+((__t = ( name )) == null ? '' : __t) +
+'</h2>\n        <h4 class="iapp-entry-details-subheader">Overall Facebook activity</h4>\n        <div class="iapp-entry-details-large-number tri-down">\n          <h3 class="iapp-entry-details-large-number-text">';
+ print(interactions.toLocaleString()) ;
+__p += '</h3>\n        \n        </div>\n        <div class="iapp-fb-unit-badge"> <img src="';
+ print(config.imageDir + "fb-icon.png") ;
+__p += '" alt="likes, shares, mentions">Likes, Shares, Mentions</div>\n\n    </div>\n    <div class="iapp-entry-details-demographics">\n        <div class="iapp-entry-details-demographics-overall">\n            <div class="iapp-entry-details-demographics-overall-headers">\n                <span class="iapp-demo-headers-female">Female</span>\n                <span class="iapp-demo-headers-male">Male</span>\n            </div>\n            <div class="iapp-entry-details-demographics-overview-bar iapp-js-entry-demo-overview"></div>\n        </div>\n        <div class="iapp-entry-details-demographics-details iapp-js-entry-demo-details"></div>\n    </div>\n</section>\n';
 
 }
 return __p

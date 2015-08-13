@@ -16,22 +16,80 @@
 }
 
 .iapp-entry-details-header {
-    font-family: "Futura Today DemiBold", Arial, sans-serif;
+    font-family: "Futura Today Normal", Arial, sans-serif;
+    text-align: center;
 }
 
 .republican .iapp-entry-details-header { color: $red2; }
 .democrat .iapp-entry-details-header { color: $blue2; }
 
 .iapp-entry-details-subheader {
-    border-bottom: solid 1px $dark-grey;
     font-family: "Futura Today Light", Arial, sans-serif;
     margin: 0;
+    text-align: center;
 }
 
 .iapp-entry-details-large-number {
+    background: $light-grey;
+    border-radius: 2px;
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.5);
     font-family: "Futura Today Light", Arial, sans-serif;
     font-size: 2em;
-    margin: 10px 0;
+    margin: 10px 0 15px 0;
+    position: relative;
+    text-align: center;
+
+    h3 {
+        font-family: "Futura Today Light", Arial, sans-serif;
+        font-size: 0.8em;
+        margin: 0;
+    }
+    .iapp-arrow-down {
+        bottom: -10px;
+        left: 50%;
+        position: absolute;
+    }
+}
+
+/* Required for Down Triangle */
+  .tri-down:before, .tri-down:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+    border-bottom: 0;
+  }
+
+  /* Stroke */
+  .tri-down:before {
+    bottom: -12px;
+    left: 50%;
+
+    /* If 1px darken stroke slightly */
+    border-top-color: $medium-grey;
+    border-width: 10px;
+    border-bottom-color: $light-grey;
+    transform: translate(-50%, 0);
+  }
+
+  /* Fill */
+  .tri-down:after {
+    bottom: -10px;
+    left: 50%;
+    border-top-color: $light-grey;
+    border-width: 10px;
+    transform: translate(-50%, 0);
+  }
+
+.iapp-arrow-down {
+    display:none;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;	
+    border-top: 10px solid $light-grey;
 }
 
 .iapp-entry-details-large-number-unit {
@@ -39,7 +97,7 @@
 }
 
 .iapp-entry-details-demographics-overall {
-    background-color: $light-grey;
+
     padding-top: 10px;
 }
 
@@ -75,7 +133,6 @@
 }
 
 .iapp-entry-details-demographics {
-    border: solid 1px $light-grey;
     margin-top: 20px;
     width: 245px;
 
@@ -106,6 +163,21 @@
 
 .iapp-demo-headers-female {color: $medium-grey;}
 .iapp-demo-headers-male {color: $dark-grey;}
+
+.iapp-fb-unit-badge {
+    background-color: #4A6DB4;
+    border-radius: 2px;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    padding: 5px;
+    vertical-align: top;
+    width: 210px;
+    img {
+        margin-right: 5px;
+        width: 16px;
+    }
+}
 
 /******
 *Map styles
