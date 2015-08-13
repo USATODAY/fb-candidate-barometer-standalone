@@ -6,8 +6,9 @@ define([
     'helpers',
     'templates',
     'velocity',
-    'views/EntryView'
-], function(jQuery, _, Backbone, config, helpers, templates, Velocity, EntryView) {
+    'views/EntryView',
+    'views/WeekChartView'
+], function(jQuery, _, Backbone, config, helpers, templates, Velocity, EntryView, WeekChartView) {
     return Backbone.View.extend({
         initialize: function() {
             this.listenTo(this.model, "change:entryCollection", this.render);
@@ -36,6 +37,10 @@ define([
                 //render date and date navigation
                 var context = helpers.makeContext({date: currentDate, showNext: this.currentEntryIndex > 0, showPrevious: this.currentEntryIndex < (this.entryCollection.length - 1)});
                 this.$el.append(this.template(context));
+
+                //add weekChart
+                this.weekChartView = new WeekChartView({el: ".iapp-weeks-chart", collection: this.entryCollection});
+                this.weekChartView.render();
 
                 //make new entryView based on current entry model and render into view
                 var entryView = new EntryView({model: this.currentEntry});
