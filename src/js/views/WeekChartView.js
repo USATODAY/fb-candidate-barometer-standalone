@@ -22,7 +22,7 @@ define([
             var chartRange = this.chartRange = dimensions.width * (chartData.length / numVisible);
             var largeCircleRadius = this.largeCircleRadius = 18;
             var smallCircleRadius = this.smallCircleRadius = 9;
-            var x = d3.scale.linear()
+            var x = this.x = d3.scale.linear()
                 .range([0, chartRange])
                 .domain([chartData.length - 1, 0]);
 
@@ -44,7 +44,7 @@ define([
                 .attr("height", dimensions.height + (dimensions.margin * 2));
 
             this.chartWrap = this.svg.append("g")
-                .attr("transform", "translate(" + -(chartRange - (dimensions.width/2 + (chartRange/chartData.length) * this.currentEntry)) + ", " + dimensions.margin + ")");
+                .attr("transform", "translate(" + -(chartRange - (dimensions.width/2 + (x(chartData.length - 1 - this.currentEntry)))) + ", " + dimensions.margin + ")");
 
             this.chartG = this.chartWrap.append("g")
                 .datum({x: 0, y: 0})
@@ -96,15 +96,15 @@ define([
             var chartRange = this.chartRange,
             dimensions = this.dimensions,
             chartData = this.chartData,
+            x = this.x,
             largeCircleRadius = this.largeCircleRadius,
             smallCircleRadius = this.smallCircleRadius,
             transitionDuration = 1000;
-            console.log(newIndex);
 
             //update chart position
             this.chartWrap.transition()
                 .duration(transitionDuration)
-                .attr("transform", "translate(" + -(chartRange - (dimensions.width/2 + (chartRange/chartData.length) * this.currentEntry)) + ", " + dimensions.margin + ")");
+                .attr("transform", "translate(" + -(chartRange - (dimensions.width/2 + (x(chartData.length - 1 - this.currentEntry)))) + ", " + dimensions.margin + ")");
 
             this.dataPoints.select("circle")
                 .transition()

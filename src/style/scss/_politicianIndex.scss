@@ -12,7 +12,7 @@
 
 
 .iapp-politician-index {
-    background: transparentize($new-blue, 0.5);
+    background: transparentize($new-blue, 0.1);
     color: white;
     @include BoxShadowHelper(2);
     min-height: 100%;

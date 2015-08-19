@@ -1,9 +1,13 @@
 <div class="iapp-entries-date-wrap">
         <% if (showPrevious) {%>
         <div class="iapp-entries-date-previous iapp-entries-date-selector"><img src="<% print(config.imageDir + "left-arrow-narrow.png")%>" alt="left"></div>
+        <%}else {%>
+        <div class="iapp-entries-date-previous iapp-entries-date-selector" style="display:none;"><img src="<% print(config.imageDir + "left-arrow-narrow.png")%>" alt="left"></div>
         <%}%>
         <% if (showNext) {%>
         <div class="iapp-entries-date-next iapp-entries-date-selector"><img src="<% print(config.imageDir + "right-arrow-narrow.png")%>" alt="right"></div>
+        <%}else {%>
+        <div class="iapp-entries-date-next iapp-entries-date-selector" style="display:none;"><img src="<% print(config.imageDir + "right-arrow-narrow.png")%>" alt="right"></div>
         <%}%>
 </div>
 <div class="iapp-candidate-info">
