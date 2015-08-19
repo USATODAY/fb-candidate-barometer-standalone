@@ -77,7 +77,7 @@ define([
                 .attr("y", 10)
                 .attr("dy", "0.5em")
                 .attr("font-family", "Futura Today Light, Arial, sans-serif")
-                .attr("fill", "#4A4A4A")
+                .attr("fill", "white")
                 .attr("font-size", "12px")
                 .text("All ages");
 
@@ -87,7 +87,7 @@ define([
                 .attr("dy", "0.5em")
                 .attr("font-family", "Futura Today Light, Arial, sans-serif")
                 .attr("font-size", "12px")
-                .attr("fill", "#4A4A4A")
+                .attr("fill", "white")
                 .text(function(d) {
                     return "100%";
                 });
@@ -145,7 +145,7 @@ define([
                 .attr("dy", "0.5em")
                 .attr("font-family", "Futura Today Light, Arial, sans-serif")
                 .attr("font-size", "12px")
-                .attr("fill", "#4A4A4A")
+                .attr("fill", "white")
                 .text(function(d) {
                     return d.age;
                 });
@@ -159,7 +159,7 @@ define([
                 .attr("dy", "0.5em")
                 .attr("font-family", "Futura Today Light, Arial, sans-serif")
                 .attr("font-size", "12px")
-                .attr("fill", "#4A4A4A")
+                .attr("fill", "white")
                 .text(function(d) {
                     var percent = d.w + d.m;
                     percent = Math.round( percent * 10) / 10;

@@ -19,10 +19,10 @@ define(
             this.dataUrl = this.dataManager.getDataURL();
             this.render();
         },
-        className: "iapp-entry-map",
+        className: "iapp-entry-map iapp-entry-module",
         dataUrl: null,
         render: function() {
-            this.$el.append("<h2 class='iapp-map-header'>States with highest and lowest engagement</h2>");
+            this.$el.append("<h2 class='iapp-map-header iapp-entry-module-header'>States with highest and lowest engagement</h2>");
             this.drawMap();
         },
         drawMap: function() {
@@ -40,7 +40,7 @@ define(
                 padding = 50;
             
             var chartColors;
-            var lightGreyColor = "#DEDEDE";
+            var lightGreyColor = "#C5C5C5";
             if (this.model.get("party")) {
                 chartColors = config.chartColors[this.model.get("party")];
             } else {

@@ -38,7 +38,7 @@ define(
 
                     function sizeWrap() {
                         var winHeight = window.innerHeight;
-                        jQuery('.iapp-page-wrap').height(winHeight);
+                        jQuery('.iapp-page-wrap').css({"min-height": winHeight});
                     }
 
                     sizeWrap();

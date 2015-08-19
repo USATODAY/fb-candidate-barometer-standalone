@@ -9,35 +9,11 @@ function print() { __p += __j.call(arguments, '') }
 with (obj) {
 __p += '<section class="iapp-entry-details ' +
 ((__t = ( party )) == null ? '' : __t) +
-'">\n    ';
- if (slug=="all-candidates") { ;
-__p += '\n        <div class="iapp-detail-summary slide">\n    ';
- } else {;
-__p += '\n        <div class="iapp-detail-summary">\n    ';
- } ;
-__p += '\n        <div class="iapp-politician-item-portrait ' +
-((__t = ( party )) == null ? '' : __t) +
-'">\n    <div class="iapp-politician-item-portrait-inner">\n        ';
- if(party){ ;
-__p += '\n            <img src="';
- print(config.imageDir + "/candidates/" + slug + ".jpg") ;
-__p += '" alt="' +
-((__t = ( name )) == null ? '' : __t) +
-'">\n        ';
- } else {;
-__p += '\n            <img src="';
- print(config.imageDir + "/candidates/" + slug + ".png") ;
-__p += '" alt="' +
-((__t = ( name )) == null ? '' : __t) +
-'">\n        ';
- } ;
-__p += '\n    </div>\n</div>\n        <h2 class="iapp-entry-details-header">' +
-((__t = ( name )) == null ? '' : __t) +
-'</h2>\n        <h4 class="iapp-entry-details-subheader">Overall Facebook activity</h4>\n        <div class="iapp-entry-details-large-number tri-down">\n          <h3 class="iapp-entry-details-large-number-text">';
+'">\n        <div class="iapp-detail-summary iapp-entry-module">\n        <h4 class="iapp-entry-module-header">Overall Facebook activity</h4>\n        <div class="iapp-entry-details-large-number tri-down">\n          <h3 class="iapp-entry-details-large-number-text">';
  print(interactions.toLocaleString()) ;
 __p += '</h3>\n        \n        </div>\n        <div class="iapp-fb-unit-badge"> <img src="';
  print(config.imageDir + "fb-icon.png") ;
-__p += '" alt="likes, shares, mentions">Likes, Shares, Mentions</div>\n\n    </div>\n    <div class="iapp-entry-details-demographics">\n        <div class="iapp-entry-details-demographics-overall">\n            <div class="iapp-entry-details-demographics-overall-headers">\n                <span class="iapp-demo-headers-female">Female</span>\n                <span class="iapp-demo-headers-male">Male</span>\n            </div>\n            <div class="iapp-entry-details-demographics-overview-bar iapp-js-entry-demo-overview"></div>\n        </div>\n        <div class="iapp-entry-details-demographics-details iapp-js-entry-demo-details"></div>\n    </div>\n</section>\n';
+__p += '" alt="likes, shares, mentions">Likes, Shares, Mentions</div>\n\n    </div>\n    <div class="iapp-entry-details-demographics iapp-entry-module">\n        <h4 class="iapp-entry-module-header">Who\'s in the conversation</h4>\n        <div class="iapp-entry-details-demographics-overall">\n            <div class="iapp-entry-details-demographics-overall-headers">\n                <span class="iapp-demo-headers-female">Female</span>\n                <span class="iapp-demo-headers-male">Male</span>\n            </div>\n            <div class="iapp-entry-details-demographics-overview-bar iapp-js-entry-demo-overview"></div>\n        </div>\n        <div class="iapp-entry-details-demographics-details iapp-js-entry-demo-details"></div>\n    </div>\n</section>\n';
 
 }
 return __p
@@ -60,21 +36,39 @@ obj || (obj = {});
 var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
 function print() { __p += __j.call(arguments, '') }
 with (obj) {
-__p += '<div class="iapp-entries-date-wrap">\n    <div class="iapp-entries-date-inner-wrap">\n        ';
+__p += '<div class="iapp-entries-date-wrap">\n        ';
  if (showPrevious) {;
-__p += '\n        <span class="iapp-entries-date-previous iapp-entries-date-selector"><img src="';
- print(config.imageDir + "left.png");
-__p += '" alt="left"></span>\n        ';
+__p += '\n        <div class="iapp-entries-date-previous iapp-entries-date-selector"><img src="';
+ print(config.imageDir + "left-arrow-narrow.png");
+__p += '" alt="left"></div>\n        ';
 };
-__p += '\n        <span class="iapp-entries-date">Week of ' +
-((__t = ( date )) == null ? '' : __t) +
-'</span> \n        ';
+__p += '\n        ';
  if (showNext) {;
-__p += '\n        <span class="iapp-entries-date-next iapp-entries-date-selector"><img src="';
- print(config.imageDir + "right.png");
-__p += '" alt="right"></span>\n        ';
+__p += '\n        <div class="iapp-entries-date-next iapp-entries-date-selector"><img src="';
+ print(config.imageDir + "right-arrow-narrow.png");
+__p += '" alt="right"></div>\n        ';
 };
-__p += '\n    </div>\n</div>\n<div class="iapp-entry"></div>\n<div class="iapp-weeks-chart"></div>\n<div class="iapp-entries-candidate-select-button">Select another candidate</div>\n';
+__p += '\n</div>\n<div class="iapp-candidate-info">\n  <div class="iapp-politician-item-portrait ' +
+((__t = ( party )) == null ? '' : __t) +
+'">\n    <div class="iapp-politician-item-portrait-inner">\n        ';
+ if(party){ ;
+__p += '\n            <img src="';
+ print(config.imageDir + "/candidates/" + slug + ".jpg") ;
+__p += '" alt="' +
+((__t = ( name )) == null ? '' : __t) +
+'">\n        ';
+ } else {;
+__p += '\n            <img src="';
+ print(config.imageDir + "/candidates/" + slug + ".png") ;
+__p += '" alt="' +
+((__t = ( name )) == null ? '' : __t) +
+'">\n        ';
+ } ;
+__p += '\n    </div>\n  </div>\n  <div class="iapp-entries-info">\n  <h2 class="iapp-entry-details-header">' +
+((__t = ( name )) == null ? '' : __t) +
+'</h2>\n   <p class="iapp-entries-date">Week of ' +
+((__t = ( date )) == null ? '' : __t) +
+'</p>\n   </div>\n</div>\n<div class="iapp-entry"></div>\n<div class="iapp-weeks-chart"></div>\n<div class="iapp-entries-candidate-select-button">Select another candidate</div>\n';
 
 }
 return __p

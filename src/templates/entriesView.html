@@ -1,13 +1,25 @@
 <div class="iapp-entries-date-wrap">
-    <div class="iapp-entries-date-inner-wrap">
         <% if (showPrevious) {%>
-        <span class="iapp-entries-date-previous iapp-entries-date-selector"><img src="<% print(config.imageDir + "left.png")%>" alt="left"></span>
+        <div class="iapp-entries-date-previous iapp-entries-date-selector"><img src="<% print(config.imageDir + "left-arrow-narrow.png")%>" alt="left"></div>
         <%}%>
-        <span class="iapp-entries-date">Week of <%= date %></span> 
         <% if (showNext) {%>
-        <span class="iapp-entries-date-next iapp-entries-date-selector"><img src="<% print(config.imageDir + "right.png")%>" alt="right"></span>
+        <div class="iapp-entries-date-next iapp-entries-date-selector"><img src="<% print(config.imageDir + "right-arrow-narrow.png")%>" alt="right"></div>
         <%}%>
+</div>
+<div class="iapp-candidate-info">
+  <div class="iapp-politician-item-portrait <%= party %>">
+    <div class="iapp-politician-item-portrait-inner">
+        <% if(party){ %>
+            <img src="<% print(config.imageDir + "/candidates/" + slug + ".jpg") %>" alt="<%= name %>">
+        <% } else {%>
+            <img src="<% print(config.imageDir + "/candidates/" + slug + ".png") %>" alt="<%= name %>">
+        <% } %>
     </div>
+  </div>
+  <div class="iapp-entries-info">
+  <h2 class="iapp-entry-details-header"><%= name %></h2>
+   <p class="iapp-entries-date">Week of <%= date %></p>
+   </div>
 </div>
 <div class="iapp-entry"></div>
 <div class="iapp-weeks-chart"></div>

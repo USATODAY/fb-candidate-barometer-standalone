@@ -11,7 +11,7 @@
 }
 
 .iapp-intro-inner-wrap {
-    background: linear-gradient(90deg, transparentize($red2, 0.5), transparentize($blue2, 0.5));
+    background: transparentize($new-blue, 0.2);
     height: 100%;
     position: absolute;
     width: 100%;

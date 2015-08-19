@@ -59,7 +59,7 @@
 ******/
 
 .iapp-app-header {
-    background: linear-gradient(90deg, transparentize($red2, 0.5), transparentize($blue2, 0.5));
+    background: $new-blue;
     color: white;
     height: 100px;
     margin-top: 0;

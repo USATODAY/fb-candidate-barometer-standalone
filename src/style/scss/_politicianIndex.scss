@@ -12,7 +12,8 @@
 
 
 .iapp-politician-index {
-    background: linear-gradient(90deg, transparentize($red2, 0.8), transparentize($blue2, 0.8)) white;
+    background: transparentize($new-blue, 0.5);
+    color: white;
     @include BoxShadowHelper(2);
     min-height: 100%;
     padding-bottom: 50px;
@@ -42,7 +43,7 @@
 
 .iapp-politician-index-sort-indicator {
     border-radius: 50%;
-    border: solid 1px $medium-grey;
+    border: solid 1px white;
     display: inline-block;
     height: 24px;
     width: 24px;
@@ -75,7 +76,7 @@
 
     &.selected {
         .iapp-politician-index-sort-indicator {
-            background-color: $medium-grey;
+            background-color: white;
         }
     }
 }
