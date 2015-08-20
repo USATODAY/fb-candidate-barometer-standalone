@@ -131,8 +131,7 @@
 .iapp-entry-wrapper {
     @extend .group;
     height: calc(100%);
-    margin: 0 auto;
-    max-width: 1200px;
+    margin: 0 60px;
     width: 100%;
 }
 
@@ -165,8 +164,8 @@
 }
 
 
-.iapp-demo-headers-female {color: $medium-grey;}
-.iapp-demo-headers-male {color: $dark-grey;}
+.iapp-demo-headers-female {color: #660814;}
+.iapp-demo-headers-male {color: #172433;}
 
 .iapp-fb-unit-badge {
     background-color: #4A6DB4;

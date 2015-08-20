@@ -14,8 +14,8 @@ define(["jquery"], function(jQuery) {
     var defaultShareImage = imageDir + "fb-post.jpg";
 
     var chartColors = {
-        "republican": ["#A97F84", "#742B31"],
-        "democrat":  ["#90B8CA", "#1C4255"]
+        "republican": ["#fc9292", "#c41d23"],
+        "democrat":  ["#66afd8", "#153368"]
     };
 
     /******

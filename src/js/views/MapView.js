@@ -22,7 +22,7 @@ define(
         className: "iapp-entry-map iapp-entry-module",
         dataUrl: null,
         render: function() {
-            this.$el.append("<h2 class='iapp-map-header iapp-entry-module-header'>States with highest and lowest engagement</h2>");
+            this.$el.append("<h4 class='iapp-entry-module-header'>States with highest and lowest engagement</h4>");
             this.drawMap();
         },
         drawMap: function() {

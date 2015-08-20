@@ -86,9 +86,40 @@ define([
                     return className;
                 });
 
+            this.addDate();
+
+
             // dataPoints.append("text")
                 // .text(function(d) { return d.interactions; })
                 // .attr("font-size", "10px");
+        },
+        addDate: function() {
+            var _this = this;
+            var dateText = this.chartData[this.currentEntry].date;
+            this.currentDate = this.chartG.append("g")
+                .attr("class", "iapp-chart-date")
+                .attr("transform", "translate(" + _this.x(_this.currentEntry) + "," + (_this.dimensions.height + _this.dimensions.margin - 10) + ")")
+                .attr("opacity", 0)
+                .attr("fill", "white");
+
+            this.currentDate.append("text")
+                .attr("dx", "-3em")
+                .attr("font-family", "Futura Today Light, Arial, sans-serif")
+                .attr("font-size", 12)
+                .text(dateText);
+
+            this.currentDate.transition()
+                .duration(1000)
+                .attr("opacity", 1);
+        },
+        removeDate: function() {
+            this.currentDate.transition()
+                .duration(1000)
+                .attr("opacity", 0);
+
+            this.currentDate.transition()
+                .delay(1000)
+                .remove();
         },
         updateCurrent: function(newIndex) {
             var _this = this;
@@ -100,6 +131,9 @@ define([
             largeCircleRadius = this.largeCircleRadius,
             smallCircleRadius = this.smallCircleRadius,
             transitionDuration = 1000;
+
+            this.removeDate();
+            this.addDate();
 
             //update chart position
             this.chartWrap.transition()
@@ -142,7 +176,7 @@ define([
         },
         parseData: function(collection) {
             return collection.map(function(entryModel) {
-                return {interactions: entryModel.get("interactions"), trend: entryModel.get("trend")};
+                return {interactions: entryModel.get("interactions"), trend: entryModel.get("trend"), date: helpers.formatDate(entryModel.get("dateObj"))};
             });
         },
         goForward: function() {
