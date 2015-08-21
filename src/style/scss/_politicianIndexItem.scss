@@ -6,14 +6,14 @@ $itemSize: 90px;
     position: relative;
     text-align: center;
     width: 200px;
-    @media(max-width: 600px) {
-        width: 175px;
+    @media(max-width: $small-break) {
+        width: 120px;
     }
 }
 
 .item-selected .iapp-politician-index-item {
     .iapp-politician-item-portrait {
-        opacity: 0.5;
+        // opacity: 0.5;
     }
     &.selected {
         .iapp-politician-item-portrait {
@@ -56,4 +56,8 @@ $itemSize: 90px;
     right: 40px;
     top: 45px;
     width: 36px;
+    @media(max-width: $small-break) {
+        right: 10px;
+        top: 50px;
+    }
 }

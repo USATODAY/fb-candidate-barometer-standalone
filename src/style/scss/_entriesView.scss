@@ -1,6 +1,11 @@
 .iapp-entries-date-wrap {
-    border-bottom: solid 1px $light-grey;
-    padding: 15px 0 10px 0;
+    @media (max-width: $medium-break) {
+        background: $new-blue;
+        bottom: 0;
+        height: 80px;
+        position: fixed;
+        width: 100%;
+    }
 }
 
 .iapp-loader {
@@ -13,6 +18,7 @@
 .iapp-entries-wrap {
     background: transparentize($new-blue, 0.1);
     color: white;
+    overflow: auto;
     position: relative;
     top: 0;
     width: 100%;
@@ -46,6 +52,10 @@
     &:hover {
         background: rgba(255, 255, 255, 0.8);
         @include BoxShadowHelper(3);
+    }
+
+    @media(max-width: $medium-break) {
+        position: absolute;
     }
 }
 

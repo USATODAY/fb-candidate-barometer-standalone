@@ -9,6 +9,7 @@ define([
 ], function(jQuery, _, Backbone, d3, config, helpers, templates){
     return Backbone.View.extend({
         initialize: function() {
+            this.listenTo(Backbone, "window:resize", this.redraw);
             this.currentEntry= 0;
         },
         render: function() {
@@ -18,7 +19,7 @@ define([
             var _this = this;
             var chartData = this.chartData = this.parseData(this.collection);
             var dimensions = this.dimensions = this.getDimensions();
-            var numVisible = 18;
+            var numVisible = this.getNumVisible();
             var chartRange = this.chartRange = dimensions.width * (chartData.length / numVisible);
             var largeCircleRadius = this.largeCircleRadius = 18;
             var smallCircleRadius = this.smallCircleRadius = 9;
@@ -160,6 +161,10 @@ define([
                     return className;
                 });
         },
+        redraw: function() {
+            this.$el.empty();
+            _.bind(_.throttle(this.drawChart, 250), this)();
+        },
         dragMove: function(d) {
             dx = d3.event.dx;
             d.x = d.x + dx;
@@ -169,10 +174,13 @@ define([
         getDimensions: function() {
             var margin = 20;
             return {
-                height: 200,
+                height: window.innerWidth > 960 ? 200 : 180,
                 width: window.innerWidth - (margin * 2),
                 margin: margin
             };
+        },
+        getNumVisible: function() {
+            return window.innerWidth > 1000 ? 18 : window.innerWidth / 50;
         },
         parseData: function(collection) {
             return collection.map(function(entryModel) {

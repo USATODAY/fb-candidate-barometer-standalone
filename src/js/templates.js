@@ -7,13 +7,21 @@ obj || (obj = {});
 var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
 function print() { __p += __j.call(arguments, '') }
 with (obj) {
-__p += '<section class="iapp-entry-details ' +
+
+ if (!config.isMobile) { ;
+__p += '\n<section class="iapp-entry-details ' +
 ((__t = ( party )) == null ? '' : __t) +
-'">\n        <div class="iapp-detail-summary iapp-entry-module">\n        <h4 class="iapp-entry-module-header">Overall Facebook activity</h4>\n        <div class="iapp-entry-details-large-number tri-down">\n          <h3 class="iapp-entry-details-large-number-text">';
+'">\n';
+};
+__p += '\n\n<div class="iapp-detail-summary iapp-entry-module">\n    <h4 class="iapp-entry-module-header">Overall Facebook activity</h4>\n    <div class="iapp-entry-details-large-number tri-down">\n        <h3 class="iapp-entry-details-large-number-text">';
  print(interactions.toLocaleString()) ;
-__p += '</h3>\n        \n        </div>\n        <div class="iapp-fb-unit-badge"> <img src="';
+__p += '</h3>\n        \n    </div>\n    <div class="iapp-fb-unit-badge"> <img src="';
  print(config.imageDir + "fb-icon.png") ;
-__p += '" alt="likes, shares, mentions">Likes, Shares, Mentions</div>\n\n    </div>\n    <div class="iapp-entry-details-demographics iapp-entry-module">\n        <h4 class="iapp-entry-module-header">Who\'s in the conversation</h4>\n        <div class="iapp-entry-details-demographics-overall">\n            <div class="iapp-entry-details-demographics-overall-headers">\n                <span class="iapp-demo-headers-female">Female</span>\n                <span class="iapp-demo-headers-male">Male</span>\n            </div>\n            <div class="iapp-entry-details-demographics-overview-bar iapp-js-entry-demo-overview"></div>\n        </div>\n        <div class="iapp-entry-details-demographics-details iapp-js-entry-demo-details"></div>\n    </div>\n</section>\n';
+__p += '" alt="likes, shares, mentions">Likes, Shares, Mentions</div>\n\n</div>\n<div class="iapp-entry-details-demographics iapp-entry-module">\n    <h4 class="iapp-entry-module-header">Who\'s in the conversation</h4>\n    <div class="iapp-entry-details-demographics-overall">\n        <div class="iapp-entry-details-demographics-overall-headers">\n            <span class="iapp-demo-headers-female">Female</span>\n            <span class="iapp-demo-headers-male">Male</span>\n        </div>\n        <div class="iapp-entry-details-demographics-overview-bar iapp-js-entry-demo-overview"></div>\n    </div>\n    <div class="iapp-entry-details-demographics-details iapp-js-entry-demo-details"></div>\n</div>\n\n\n';
+ if (!config.isMobile) { ;
+__p += '\n</section>\n';
+};
+__p += '\n\n';
 
 }
 return __p
@@ -76,7 +84,7 @@ __p += '\n    </div>\n  </div>\n  <div class="iapp-entries-info">\n  <h2 class="
 ((__t = ( name )) == null ? '' : __t) +
 '</h2>\n   <p class="iapp-entries-date">Week of ' +
 ((__t = ( date )) == null ? '' : __t) +
-'</p>\n   </div>\n</div>\n<div class="iapp-entry"></div>\n<div class="iapp-weeks-chart"></div>\n<div class="iapp-entries-candidate-select-button">Select another candidate</div>\n';
+'</p>\n   </div>\n</div>\n<div class="iapp-weeks-chart"></div>\n<div class="iapp-entry"></div>\n<div class="iapp-entries-candidate-select-button">Select another candidate</div>\n';
 
 }
 return __p

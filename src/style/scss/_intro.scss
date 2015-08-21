@@ -63,6 +63,10 @@
     text-align: center;
     text-transform: uppercase;
     width: 90%;
+
+    @media (max-width: $small-break) {
+        font-size: 2em;
+    }
 }
 
 .iapp-intro-sub-header {
@@ -72,9 +76,18 @@
     text-align: center;
     text-transform: uppercase;
     width: 90%;
+    @media (max-width: $small-break) {
+        font-size: 1.5;
+    }
 }
 
 .iapp-intro-map {
     margin: 0 auto;
     width: 200px;
+    img {
+        width: 100%;
+    }
+    @media (max-width: $small-break) {
+        width: 100px
+    }
 }

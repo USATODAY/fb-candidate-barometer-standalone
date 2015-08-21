@@ -1,3 +1,22 @@
+.iapp-entry {
+    margin-bottom: 280px;
+    @media (max-width: $medium-break) {
+        margin-bottom: 100px;
+    }
+}
+
+.iapp-entry-wrapper {
+    @extend .group;
+    height: 100%;
+    margin: 0 auto;
+    max-width: 1000px;
+    overflow: auto;
+    width: calc(100% - 120px);
+    @media(max-width: $small-break) {
+        width: 90%;
+    }
+}
+
 .iapp-entry-details {
     display: table-cell;
     float: left;
@@ -5,9 +24,10 @@
     width: 305px;
     height: 100%;
 
-    @media (max-width: 950px) {
-        height: 300px;
-        padding: 15px 30px;
+    @media (max-width: $medium-break) {
+        margin-bottom: 30px;
+        margin-right: 0;
+        // padding: 15px 30px;
         width: 100%;
     }
 }
@@ -72,7 +92,7 @@
     left: 50%;
 
     /* If 1px darken stroke slightly */
-    border-top-color: $medium-grey;
+    border-top-color: rgba(0, 0, 0, 0.5);
     border-width: 10px;
     border-bottom-color: $light-grey;
     transform: translate(-50%, 0);
@@ -128,30 +148,31 @@
 }
 
 
-.iapp-entry-wrapper {
-    @extend .group;
-    height: calc(100%);
-    margin: 0 60px;
-    width: 100%;
-}
 
 .iapp-entry-details-demographics {
     margin-top: 20px;
     // width: 245px;
+    max-width: 300px;
 
-    @media (max-width: 950px) {
-        float: right;
+    @media (max-width: $medium-break) {
+        // float: left;
+        // float: right;
         margin-top: 0;
+        max-width: 100%;
+        width: 100%;
     }
 }
 
 .iapp-detail-summary {
     max-width: 300px;
 
-    @media (max-width: 950px) {
-        float: left;
+    @media (max-width: $medium-break) {
+        // float: left;
+        max-width: 100%;
+        margin-bottom: 300px;
+        width: 100%;
     }
-    @media (min-width: 950px) {
+    @media (min-width: $medium-break) {
         &.slide {
             margin-top: 200px;
         }
@@ -190,12 +211,13 @@
 .iapp-entry-map {
     float: left;
     // position: relative;
-    padding-top: 30px;
-    width: 654px;
-    @media (max-width: 950px) {
+    // padding-top: 30px;
+    @media (max-width: $medium-break) {
+        clear: both;
         float: none;
         margin: 0 auto;
-        padding-top: 0;
+        // padding-top: 0;
+        width: 100%;
     }
 }
 
@@ -203,7 +225,7 @@
     font-family: "Futura Today Normal", Arial, sans-serif;
     font-size: 1.25em;
     margin-left: 25px;
-    @media (max-width: 950px) {
+    @media (max-width: $medium-break) {
         font-size: 1.2em;
         margin: 10px 0;
     }
