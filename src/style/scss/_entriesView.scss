@@ -5,6 +5,7 @@
         height: 80px;
         position: fixed;
         width: 100%;
+        z-index: 540;
     }
 }
 
@@ -22,6 +23,9 @@
     position: relative;
     top: 0;
     width: 100%;
+    @media (max-width: $medium-break) {
+        padding-bottom: 80px;
+    }
 }
 
 .iapp-entries-date-inner-wrap {
@@ -68,12 +72,18 @@
 }
 
 .iapp-entries-candidate-select-button {
-    border-top: solid 1px $medium-grey;
+    background: rgba(255, 255, 255, 0.5);
+    color: $dark-grey;
     cursor: pointer;
     font-family: "Futura Today Normal", Arial, sans-serif;
     padding: 15px 0 10px 0;
     text-align: center;
+    text-transform: uppercase;
+    transition: all 250ms ease;
     width: 100%;
+    &:hover {
+        background: rgba(255, 255, 255, 0.8);
+    }
 }
 
 .iapp-candidate-info {
