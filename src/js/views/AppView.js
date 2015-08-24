@@ -5,15 +5,18 @@ define([
     'config', 
     'templates',
     'helpers',
+    'router',
     'views/PoliticianIndexView',
     'views/EntriesView',
     'views/InfoView',
     'views/IntroView'
-], function(jQuery, _, Backbone, config, templates, helpers, PoliticianIndexView, EntriesView, InfoView, IntroView) {
+], function(jQuery, _, Backbone, config, templates, helpers, router, PoliticianIndexView, EntriesView, InfoView, IntroView) {
     return Backbone.View.extend({
         initialize: function() {
             this.listenTo(Backbone, "politician:set", this.setPolitician);
+            this.listenTo(Backbone, "router:candidate", this.onCandidateRoute);
             this.render();
+            Backbone.history.start();
         },
         el: '.iapp-js-app',
         template: templates["appView.html"],
@@ -30,8 +33,6 @@ define([
 
             var politicianIndexView = new PoliticianIndexView({collection: this.collection});
             this.$el.append(politicianIndexView.render().el);
-            // var testPolitician = this.collection.findWhere({id: 0});
-            // this.setPolitician(testPolitician);
         },
         events: {
             "click .iapp-info-button": "onInfoClick"
@@ -47,6 +48,11 @@ define([
             }
             this.entriesView = new EntriesView({model: politicianModel});
             this.$el.append(this.entriesView.el);
+        },
+        onCandidateRoute: function(candidateSlug) {
+            var candidateModel = this.collection.findWhere({'slug': candidateSlug});
+            console.log("candidate route");
+            this.setPolitician(candidateModel);
         },
         onInfoClick: function(e) {
             Backbone.trigger("info:show");

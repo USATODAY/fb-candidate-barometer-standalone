@@ -5,11 +5,12 @@ define(
     'backbone',
     'isotope',
     'config',
+    'router',
     'dataManager',
     'collections/PoliticianCollection',
     'views/AppView'
     ],
-    function(jQuery, _, Backbone, Isotope, config, DataManager, PoliticianCollection, AppView){
+    function(jQuery, _, Backbone, Isotope, config, router, DataManager, PoliticianCollection, AppView){
     
     return {
         init: function() {

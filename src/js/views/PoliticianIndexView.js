@@ -4,15 +4,17 @@ define([
     'backbone',
     'imagesloaded',
     'config', 
+    'router',
     'templates',
     'velocity',
     'views/PoliticianItemView'
-], function(jQuery, _, Backbone, imagesLoaded, config, templates, Velocity, PoliticianItemView) {
+], function(jQuery, _, Backbone, imagesLoaded, config, router, templates, Velocity, PoliticianItemView) {
     return Backbone.View.extend({
         initialize: function() {
             this.listenTo(Backbone, "menu:close", this.unExpand);
             this.listenTo(Backbone, "menu:open", this.expand);
             this.listenTo(Backbone, "politician:set", this.politicianSet);
+            this.listenTo(Backbone, "router:candidate", this.unExpand);
         },
         template: templates["politicianIndex.html"],
         className: "iapp-politician-index expanded",
@@ -67,6 +69,7 @@ define([
             // this.$('.iapp-politician-index-wrap').velocity({"max-height": height.openHeight}, {duration: 400, easing: "swing"});
             // this.$el.addClass('expanded');
             // this.$('.iapp-politician-index-show-button').text("Select a candidate");
+            router.navigate('_');
             this.$el.velocity({"translateY": "0%"}, {duration: 400, easing: "swing"});
             this._expanded = true;
         },

@@ -8,6 +8,7 @@ define([
     return Backbone.View.extend({
         initialize: function() {
             this.addTouchEvents();
+            this.listenTo(Backbone, "router:candidate", this.advance);
         },
         addTouchEvents: function() {
             this.ht = new Hammer(this.el);
@@ -20,7 +21,6 @@ define([
             "click .iapp-intro-begin-button": "onBeginClick"
         },
         advance: function(e) {
-            e.preventDefault();
             jQuery(window).off('scroll');
             this.$el.velocity({"translateY": "-100%"}, {duration: 400, easing: "swing"});
         },
