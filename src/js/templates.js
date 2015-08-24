@@ -48,23 +48,25 @@ __p += '<div class="iapp-entries-date-wrap">\n        ';
  if (showPrevious) {;
 __p += '\n        <div class="iapp-entries-date-previous iapp-entries-date-selector"><img src="';
  print(config.imageDir + "left-arrow-narrow.png");
-__p += '" alt="left"></div>\n        ';
+__p += '" alt="left"> <div class="iapp-entries-date-selector-label" >Previous Week</div>  </div>\n        ';
 }else {;
 __p += '\n        <div class="iapp-entries-date-previous iapp-entries-date-selector" style="display:none;"><img src="';
  print(config.imageDir + "left-arrow-narrow.png");
-__p += '" alt="left"></div>\n        ';
+__p += '" alt="left"> <div class="iapp-entries-date-selector-label" >Previous Week</div>  </div>\n        ';
 };
 __p += '\n        ';
  if (showNext) {;
 __p += '\n        <div class="iapp-entries-date-next iapp-entries-date-selector"><img src="';
  print(config.imageDir + "right-arrow-narrow.png");
-__p += '" alt="right"></div>\n        ';
+__p += '" alt="right"> <div class="iapp-entries-date-selector-label" >Next Week</div>  </div>\n        ';
 }else {;
 __p += '\n        <div class="iapp-entries-date-next iapp-entries-date-selector" style="display:none;"><img src="';
  print(config.imageDir + "right-arrow-narrow.png");
-__p += '" alt="right"></div>\n        ';
+__p += '" alt="right"> <div class="iapp-entries-date-selector-label" >Next Week</div>  </div>\n        ';
 };
-__p += '\n</div>\n<div class="iapp-candidate-info">\n  <div class="iapp-politician-item-portrait ' +
+__p += '\n        <h3 class="iapp-entries-date">' +
+((__t = (date)) == null ? '' : __t) +
+'</h3>\n</div>\n<div class="iapp-candidate-info">\n  <div class="iapp-politician-item-portrait ' +
 ((__t = ( party )) == null ? '' : __t) +
 '">\n    <div class="iapp-politician-item-portrait-inner">\n        ';
  if(party){ ;

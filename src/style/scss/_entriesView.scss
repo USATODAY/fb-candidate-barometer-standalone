@@ -9,6 +9,16 @@
     }
 }
 
+h3.iapp-entries-date {
+    display: none;
+    font-family: "Futura Today Light", Arial, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    @media (max-width: $medium-break) {
+        display: block;
+    }
+}
+
 .iapp-loader {
     left: 50%;
     position: absolute;
@@ -63,12 +73,23 @@
     }
 }
 
+.iapp-entries-date-selector-label {
+    text-transform: uppercase;
+    font-family: "Futura Today Light";
+    text-align: center;
+    font-size: 0.8em;
+    transform: translate(0, 70px);
+    @media(max-width: $medium-break) {
+        display: none;
+    }
+}
+
 .iapp-entries-date-previous {
-    left: 0;
+    left: 10px;
 }
 
 .iapp-entries-date-next {
-    right: 0;
+    right: 10px;
 }
 
 .iapp-entries-candidate-select-button {
@@ -104,6 +125,9 @@
         font-family: "Futura Today Normal", Arial, sans-serif;
         margin: 0;
         vertical-align: top;
+        @media (max-width: $medium-break) {
+            display: none;
+        }
     }
 
 

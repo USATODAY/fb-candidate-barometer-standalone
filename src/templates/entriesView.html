@@ -1,14 +1,15 @@
 <div class="iapp-entries-date-wrap">
         <% if (showPrevious) {%>
-        <div class="iapp-entries-date-previous iapp-entries-date-selector"><img src="<% print(config.imageDir + "left-arrow-narrow.png")%>" alt="left"></div>
+        <div class="iapp-entries-date-previous iapp-entries-date-selector"><img src="<% print(config.imageDir + "left-arrow-narrow.png")%>" alt="left"> <div class="iapp-entries-date-selector-label" >Previous Week</div>  </div>
         <%}else {%>
-        <div class="iapp-entries-date-previous iapp-entries-date-selector" style="display:none;"><img src="<% print(config.imageDir + "left-arrow-narrow.png")%>" alt="left"></div>
+        <div class="iapp-entries-date-previous iapp-entries-date-selector" style="display:none;"><img src="<% print(config.imageDir + "left-arrow-narrow.png")%>" alt="left"> <div class="iapp-entries-date-selector-label" >Previous Week</div>  </div>
         <%}%>
         <% if (showNext) {%>
-        <div class="iapp-entries-date-next iapp-entries-date-selector"><img src="<% print(config.imageDir + "right-arrow-narrow.png")%>" alt="right"></div>
+        <div class="iapp-entries-date-next iapp-entries-date-selector"><img src="<% print(config.imageDir + "right-arrow-narrow.png")%>" alt="right"> <div class="iapp-entries-date-selector-label" >Next Week</div>  </div>
         <%}else {%>
-        <div class="iapp-entries-date-next iapp-entries-date-selector" style="display:none;"><img src="<% print(config.imageDir + "right-arrow-narrow.png")%>" alt="right"></div>
+        <div class="iapp-entries-date-next iapp-entries-date-selector" style="display:none;"><img src="<% print(config.imageDir + "right-arrow-narrow.png")%>" alt="right"> <div class="iapp-entries-date-selector-label" >Next Week</div>  </div>
         <%}%>
+        <h3 class="iapp-entries-date"><%=date%></h3>
 </div>
 <div class="iapp-candidate-info">
   <div class="iapp-politician-item-portrait <%= party %>">

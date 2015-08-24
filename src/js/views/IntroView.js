@@ -7,7 +7,6 @@ define([
 ], function(jQuery, _, Backbone, Hammer, Velocity) {
     return Backbone.View.extend({
         initialize: function() {
-            jQuery(window).on('scroll', _.bind(this.advance, this));
             this.addTouchEvents();
         },
         addTouchEvents: function() {

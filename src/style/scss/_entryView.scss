@@ -1,5 +1,5 @@
 .iapp-entry {
-    margin-bottom: 280px;
+    margin-bottom: 260px;
     @media (max-width: $medium-break) {
         margin-bottom: 100px;
     }
@@ -11,7 +11,7 @@
     margin: 0 auto;
     max-width: 1000px;
     overflow: auto;
-    width: calc(100% - 120px);
+    width: calc(100% - 140px);
     @media(max-width: $small-break) {
         width: 90%;
     }
@@ -20,7 +20,7 @@
 .iapp-entry-details {
     display: table-cell;
     float: left;
-    margin-right: 30px;
+    margin-right: 20px;
     width: 305px;
     height: 100%;
 
@@ -170,7 +170,7 @@
     @media (max-width: $medium-break) {
         // float: left;
         max-width: 100%;
-        margin-bottom: 300px;
+        margin-bottom: 280px;
         width: 100%;
     }
     @media (min-width: $medium-break) {

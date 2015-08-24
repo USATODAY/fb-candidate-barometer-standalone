@@ -207,7 +207,7 @@ define(
 
         },
         redraw: function() {
-            this.$el.empty();
+            this.svg.remove();
             _.bind(_.throttle(this.drawMap, 250), this)();
         },
         getWidth: function() {

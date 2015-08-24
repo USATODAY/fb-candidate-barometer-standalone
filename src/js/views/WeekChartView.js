@@ -29,7 +29,7 @@ define([
 
 
             var y = d3.scale.linear()
-                .range([0, dimensions.height])
+                .range([0, dimensions.height - dimensions.margin])
                 .domain([d3.max(chartData, function(d) {return d.interactions; }), 0]);
 
             var line = d3.svg.line()
@@ -51,7 +51,7 @@ define([
                 .datum({x: 0, y: 0})
                 .attr("class", "iapp-chart-g");
 
-            this.chartG.call(drag);
+            // this.chartG.call(drag);
 
             this.chartG.append("path")
                 .datum(chartData)
@@ -87,12 +87,56 @@ define([
                     return className;
                 });
 
-            this.addDate();
+            // this.addDate();
+            this.addMonths();
 
 
             // dataPoints.append("text")
                 // .text(function(d) { return d.interactions; })
                 // .attr("font-size", "10px");
+        },
+        addMonths: function() {
+            var _this = this;
+
+            //add g to hold each month tick
+            var monthTicksG = this.chartG.selectAll(".month-ticks")
+                .data(this.chartData)
+                .enter()
+                .append('g')
+                .attr('class', '.month-ticks')
+                .attr('transform', function(d, i) {
+                    var ty = _this.dimensions.height;
+                    var tx = _this.x(i);
+                    return 'translate(' + tx + ', ' + ty + ')';
+                });
+
+            //add tick mark
+            monthTicksG.append('rect')
+                .attr('width', 1)
+                .attr('height', 5)
+                .attr('y', -5)
+                .attr('fill', 'white');
+
+            monthTicksG.append('text')
+                .text(function(d, i) {
+                    var currentMonth = d.date.split(' ')[0];
+                    if (i < _this.chartData.length - 1) {
+                        var nextMonth = _this.chartData[i + 1].date.split(' ')[0];
+                        if (currentMonth !== nextMonth) {
+                            return currentMonth.toUpperCase();
+                        } else {
+                            return '';
+                        }
+                    } else {
+                        return currentMonth.toUpperCase();
+                    }
+                })
+                .attr("fill", "white")
+                .attr('dy', '1em')
+                .attr("dx", "-1.2em")
+                .attr("font-family", "Futura Today Light, Arial, sans-serif")
+                .attr("font-size", 12);
+
         },
         addDate: function() {
             var _this = this;
@@ -133,8 +177,8 @@ define([
             smallCircleRadius = this.smallCircleRadius,
             transitionDuration = 1000;
 
-            this.removeDate();
-            this.addDate();
+            // this.removeDate();
+            // this.addDate();
 
             //update chart position
             this.chartWrap.transition()
