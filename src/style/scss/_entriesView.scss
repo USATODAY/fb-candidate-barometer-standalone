@@ -22,7 +22,7 @@ h3.iapp-entries-date {
 .iapp-loader {
     left: 50%;
     position: absolute;
-    top: 50%;
+    top: 200px;
     transform: translate(-50%, -50%);
 }
 
@@ -36,6 +36,10 @@ h3.iapp-entries-date {
     width: 100%;
     @media (max-width: $medium-break) {
         padding-bottom: 80px;
+    }
+
+    &.loading {
+        overflow: visible;
     }
 }
 
