@@ -18,7 +18,6 @@ define([
             },
 
             candidate: function(candidateSlug) {
-                console.log("candidate router route");
                 Backbone.trigger("router:candidate", candidateSlug);
             }
 

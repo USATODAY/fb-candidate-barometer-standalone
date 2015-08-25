@@ -13,6 +13,8 @@ define(["jquery"], function(jQuery) {
     var defaultShareLanguage = "";
     var defaultShareImage = imageDir + "fb-post.jpg";
 
+    var projectTitle = "2016 USA TODAY/FACEBOOK CANDIDATE BAROMETER";
+
     var chartColors = {
         "republican": ["#fc9292", "#c41d23"],
         "democrat":  ["#66afd8", "#153368"]
@@ -93,6 +95,7 @@ define(["jquery"], function(jQuery) {
         defaultShareImage: defaultShareImage,
         isEmbed: _getIsEmbed(),
         getModuleType: _getModuleType,
-        chartColors: chartColors
+        chartColors: chartColors,
+        projectTitle: projectTitle
     };
 });

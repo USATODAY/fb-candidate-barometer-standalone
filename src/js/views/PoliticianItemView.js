@@ -34,7 +34,6 @@ define([
         },
         onClick: function() {
             var _this = this;
-            console.log(this.model.get('slug'));
             router.navigate('candidate/' + this.model.get('slug'));
             Backbone.trigger("politician:set", this.model);
             Backbone.trigger("menu:close", this.model);

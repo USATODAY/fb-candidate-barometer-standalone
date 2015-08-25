@@ -31,7 +31,7 @@ this["templates"]["appView.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="iapp-app-header">\n    <div class="iapp-app-header-inner-wrap">\n         <h3 class="iapp-app-header-title">2016 USA TODAY/Facebook Candidate Barometer</h3>\n    </div>\n</div>\n\n<div id=\'iapp-map-tooltip\' class=\'iapp-hidden iapp-map-tooltip\'> </div>\n<img class=\'iapp-info-button\' src=\'' +
+__p += '<div class="iapp-app-header">\n    <div class="iapp-app-header-inner-wrap">\n        <h3 class="iapp-app-header-title">2016 USA TODAY/Facebook Candidate Barometer</h3>\n        <div class="iapp-header-share-wrap"></div>\n    </div>\n</div>\n\n<div id=\'iapp-map-tooltip\' class=\'iapp-hidden iapp-map-tooltip\'> </div>\n<img class=\'iapp-info-button\' src=\'' +
 ((__t = (config.imageDir)) == null ? '' : __t) +
 'info-icon.png\' alt=\'info\'>\n';
 
@@ -155,6 +155,34 @@ __p += '" alt="">\n';
 __p += '\n<h3 class="iapp-politician-header">' +
 ((__t = ( name )) == null ? '' : __t) +
 '</h3>\n';
+
+}
+return __p
+};
+
+this["templates"]["shareView.html"] = function(obj) {
+obj || (obj = {});
+var __t, __p = '', __e = _.escape;
+with (obj) {
+__p += '<a href="https://twitter.com/intent/tweet?url=' +
+((__t = (share.twitterShare)) == null ? '' : __t) +
+'&text=' +
+((__t = (share.encodedShare)) == null ? '' : __t) +
+'" class="iapp-share-button iapp-share-twitter iapp-share-popup" target="_blank"><img src="' +
+((__t = ( config.imageDir )) == null ? '' : __t) +
+'twitter.svg" alt="Twitter share"></a>\n<a href=\'https://www.facebook.com/dialog/feed?display=popup&app_id=' +
+((__t = (share.fb_id)) == null ? '' : __t) +
+'&link=' +
+((__t = (share.fbShare)) == null ? '' : __t) +
+'&picture=' +
+((__t = (share.still_image)) == null ? '' : __t) +
+'&name=&description=' +
+((__t = (share.encodedShare)) == null ? '' : __t) +
+'&redirect_uri=' +
+((__t = (share.fb_redirect)) == null ? '' : __t) +
+'\' class="iapp-share-button iapp-share-facebook iapp-share-popup" target="_blank"><img src="' +
+((__t = (config.imageDir)) == null ? '' : __t) +
+'facebook.svg" alt="Facebook share"></a>\n';
 
 }
 return __p
