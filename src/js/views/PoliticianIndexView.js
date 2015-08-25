@@ -58,27 +58,19 @@ define([
             "click .iapp-sort-button-party": "sortByParty"
         },
         toggleExpand: function() {
-            // if (this._expanded) {
-                // this.unExpand();
-            // } else {
-                // this.expand();
-            // }
+            if (this._expanded) {
+                this.unExpand();
+            } else {
+                this.expand();
+            }
         },
         expand: function() {
             //animate to show all
-            // this.$('.iapp-politician-index-wrap').velocity({"max-height": height.openHeight}, {duration: 400, easing: "swing"});
-            // this.$el.addClass('expanded');
-            // this.$('.iapp-politician-index-show-button').text("Select a candidate");
             router.navigate('_');
             this.$el.velocity({"translateY": "0%"}, {duration: 400, easing: "swing"});
             this._expanded = true;
         },
         unExpand: function() {
-            // var height = this._getHeight();
-            // this.$('.iapp-politician-index-wrap').velocity({"max-height": height.closedHeight}, {duration: 400, easing: "swing"});
-            // this.$el.removeClass('expanded');
-            // this.$('.iapp-politician-index-show-button').text("See all candidates");
-            // this._expanded = false;
             this.$el.velocity({"translateY": "-120%"}, {duration: 400, easing: "swing"});
         },
         resize: function() {
@@ -108,7 +100,6 @@ define([
         sortByName: function() {
             this.$(".selected").removeClass("selected");
             this.$(".iapp-sort-button-name").addClass("selected");
-            console.log("name");
             this.$isotopeEl.isotope({sortBy: "name", sortAscending: true});
         },
         sortByParty: function() {

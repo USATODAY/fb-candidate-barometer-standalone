@@ -218,7 +218,7 @@ define([
         getDimensions: function() {
             var margin = 20;
             return {
-                height: window.innerWidth > 960 ? 200 : 180,
+                height: window.innerWidth > 960 ? 160 : 140,
                 width: window.innerWidth - (margin * 2),
                 margin: margin
             };
