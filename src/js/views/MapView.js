@@ -214,7 +214,7 @@ define(
             var width,
             winWidth = window.innerWidth;
             if (winWidth > 1110) {
-                width = 600;
+                width = 540;
             } else if (winWidth > 760) {
                 width = 480;
             } else {

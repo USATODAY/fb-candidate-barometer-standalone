@@ -3,7 +3,7 @@
     color: white;
     font-family: "Futura Today Light", Arial, sans-serif;
     overflow: hidden;
-    position: absolute;
+    position: fixed;
     width: 100%;
     z-index: 550;
     strong {
@@ -43,7 +43,7 @@
 .iapp-info-button {
     cursor: pointer;
     position: absolute;
-    bottom: 140px;
-    left: 25px;
+    top: 140px;
+    right: 25px;
     z-index: 550;
 }

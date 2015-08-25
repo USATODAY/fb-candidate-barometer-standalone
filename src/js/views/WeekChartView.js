@@ -13,6 +13,7 @@ define([
             this.currentEntry= 0;
         },
         render: function() {
+            this.$el.append("<h4 class='iapp-entry-module-header'>Facebook activity week by week</h4>");
             this.drawChart();
         },
         drawChart: function()  {
@@ -206,7 +207,7 @@ define([
                 });
         },
         redraw: function() {
-            this.$el.empty();
+            this.svg.remove();
             _.bind(_.throttle(this.drawChart, 250), this)();
         },
         dragMove: function(d) {
