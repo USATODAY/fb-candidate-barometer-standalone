@@ -6,13 +6,14 @@ define([
     'config', 
     'templates',
     'helpers',
+    'api/analytics',
     'router',
     'models/ShareModel',
     'views/PoliticianIndexView',
     'views/EntriesView',
     'views/InfoView',
     'views/IntroView'
-], function(jQuery, _, Backbone, Analytics, config, templates, helpers, router, ShareModel, PoliticianIndexView, EntriesView, InfoView, IntroView) {
+], function(jQuery, _, Backbone, Analytics, config, templates, helpers, Analytics, router, ShareModel, PoliticianIndexView, EntriesView, InfoView, IntroView) {
     return Backbone.View.extend({
         initialize: function() {
             this.listenTo(Backbone, "politician:set", this.setPolitician);
@@ -52,10 +53,6 @@ define([
         },
         headerTemplate: templates["header.html"],
         setPolitician: function(politicianModel) {
-            /******
-             * @TODO add ability to update entries view without wiping out/re-rendering
-             *****/
-
             if (this.entriesView !== undefined) {
                 this.entriesView.remove();
             }
@@ -73,7 +70,7 @@ define([
             Backbone.trigger("info:show");
         },
         onShareButtonClick: function(e) {
-            Analytics.trackEvent('Social share button clicked');
+            Analytics.trackEvent('fb-barometer-share-button-clicked');
             e.preventDefault();
             this.windowPopup(e.currentTarget.href, 500, 300);
         },

@@ -8,8 +8,9 @@ define([
     'velocity',
     'router',
     'views/EntryView',
-    'views/WeekChartView'
-], function(jQuery, _, Backbone, config, helpers, templates, Velocity, router, EntryView, WeekChartView) {
+    'views/WeekChartView',
+    'api/analytics'
+], function(jQuery, _, Backbone, config, helpers, templates, Velocity, router, EntryView, WeekChartView, Analytics) {
     return Backbone.View.extend({
         initialize: function() {
             this.listenTo(this.model, "change:entryCollection", this.entriesReady);
@@ -88,12 +89,14 @@ define([
         },
         goBack: function() {
             //increment entry index and re-render
+            Analytics.trackEvent('fb-barometer-previous-week-button-clicked');
             this.currentEntryIndex++;
             this.weekChartView.goBack();
             this.render();
         },
         goForward: function() {
             //decrement entry index and re-render
+            Analytics.trackEvent('fb-barometer-next-week-button-clicked');
             this.currentEntryIndex--;
             this.weekChartView.goForward();
             this.render();

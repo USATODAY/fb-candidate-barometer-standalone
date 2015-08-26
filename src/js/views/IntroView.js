@@ -4,8 +4,9 @@ define([
     "backbone",
     "hammerjs",
     'router',
-    "velocity"
-], function(jQuery, _, Backbone, Hammer, router, Velocity) {
+    "velocity",
+    'api/analytics'
+], function(jQuery, _, Backbone, Hammer, router, Velocity, Analytics) {
     return Backbone.View.extend({
         initialize: function() {
             this.addTouchEvents();
@@ -34,6 +35,7 @@ define([
         },
         onBeginClick: function(e) {
             router.navigate('/candidate/');
+            Analytics.trackEvent("fb-barometer-begin-button-clicked");
             this.advance(e);
         },
         onSwipe: function(e) {
