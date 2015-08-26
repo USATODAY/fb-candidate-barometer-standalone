@@ -24,7 +24,7 @@ define([
         },
         template: templates["EntryView.html"],
         _getColors: function() {
-            return ["#660814", "#172433"];
+            return ["#f0f0f0", "#bdbdbd"];
         },
         className: "iapp-entry-wrapper",
         _barDimensions: {

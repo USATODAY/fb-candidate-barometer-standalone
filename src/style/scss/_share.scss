@@ -1,13 +1,15 @@
 .iapp-share-button {
     cursor: pointer;
     display: block;
+    height: 60px;
     float: left;
-    // margin: 1em auto 0 auto;
+    overflow: hidden;
     width: 60px;
     img {
         display: block;
     }
     @media(max-width: $medium-break) {
+        height: 40px;
         width: 40px;
     }
 }
