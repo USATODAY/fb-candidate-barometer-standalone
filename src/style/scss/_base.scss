@@ -22,6 +22,10 @@ header, footer {
     display: none;
 }
 
+article.padded-container.first-margin {
+    margin-top: 0 !important;
+}
+
 article {
     background: url(http://www.gannett-cdn.com/experiments/usatoday/2015/08/fb-meter-standalone/img/wh-blur.jpg) no-repeat center center fixed;
     background-size: cover;
