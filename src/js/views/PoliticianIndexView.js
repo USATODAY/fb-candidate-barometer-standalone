@@ -15,6 +15,7 @@ define([
             this.listenTo(Backbone, "menu:open", this.expand);
             this.listenTo(Backbone, "politician:set", this.politicianSet);
             this.listenTo(Backbone, "router:candidate", this.unExpand);
+            this.listenTo(Backbone, "router:candidateSelect", this.expand);
         },
         template: templates["politicianIndex.html"],
         className: "iapp-politician-index expanded",
@@ -66,7 +67,6 @@ define([
         },
         expand: function() {
             //animate to show all
-            router.navigate('_');
             this.$el.velocity({"translateY": "0%"}, {duration: 400, easing: "swing"});
             this._expanded = true;
         },

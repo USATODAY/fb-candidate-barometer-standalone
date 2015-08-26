@@ -7,16 +7,18 @@ define([
         var Router = Backbone.Router.extend({
 
             routes: {
-                "": "home",
-                "/candidate/:candidateSlug": "candidate",
-                "candidate/:candidateSlug": "candidate",
-
+                "(_)": "home",
+                "(/)candidate/": "candidateSelect",
+                "(/)candidate/:candidateSlug": "candidate",
             },
 
             home: function() {
-                Backbone.trigger("homeRoute");
+                Backbone.trigger("router:home");
             },
-
+            candidateSelect: function() {
+                console.log("candidate select route");
+                Backbone.trigger("router:candidateSelect");
+            },
             candidate: function(candidateSlug) {
                 Backbone.trigger("router:candidate", candidateSlug);
             }

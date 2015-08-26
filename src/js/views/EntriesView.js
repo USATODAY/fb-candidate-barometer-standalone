@@ -6,9 +6,10 @@ define([
     'helpers',
     'templates',
     'velocity',
+    'router',
     'views/EntryView',
     'views/WeekChartView'
-], function(jQuery, _, Backbone, config, helpers, templates, Velocity, EntryView, WeekChartView) {
+], function(jQuery, _, Backbone, config, helpers, templates, Velocity, router, EntryView, WeekChartView) {
     return Backbone.View.extend({
         initialize: function() {
             this.listenTo(this.model, "change:entryCollection", this.entriesReady);
@@ -82,6 +83,7 @@ define([
             "click .iapp-entries-date-next": "goForward"
         },
         onCandidateSelect: function() {
+            router.navigate("/candidate/");
             Backbone.trigger("menu:open");
         },
         goBack: function() {

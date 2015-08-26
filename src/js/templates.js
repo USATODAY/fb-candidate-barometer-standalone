@@ -66,7 +66,7 @@ __p += '" alt="right"> <div class="iapp-entries-date-selector-label" >Next Week<
 };
 __p += '\n        <h3 class="iapp-entries-date">' +
 ((__t = (date)) == null ? '' : __t) +
-'</h3>\n</div>\n<div class="iapp-candidate-info">\n  <div class="iapp-politician-item-portrait ' +
+'</h3>\n</div>\n<div class="iapp-entries-candidate-select-button">Select another candidate</div>\n<div class="iapp-candidate-info">\n  <div class="iapp-politician-item-portrait ' +
 ((__t = ( party )) == null ? '' : __t) +
 '">\n    <div class="iapp-politician-item-portrait-inner">\n        ';
  if(party){ ;
@@ -86,7 +86,7 @@ __p += '\n    </div>\n  </div>\n  <div class="iapp-entries-info">\n  <h2 class="
 ((__t = ( name )) == null ? '' : __t) +
 '</h2>\n   <p class="iapp-entries-date">Week of ' +
 ((__t = ( date )) == null ? '' : __t) +
-'</p>\n   </div>\n</div>\n<div class="iapp-weeks-chart"></div>\n<div class="iapp-entry"></div>\n<div class="iapp-entries-candidate-select-button">Select another candidate</div>\n';
+'</p>\n   </div>\n</div>\n<div class="iapp-weeks-chart"></div>\n<div class="iapp-entry"></div>\n';
 
 }
 return __p

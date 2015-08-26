@@ -9,12 +9,12 @@
 }
 
 .iapp-weeks-chart {
-    bottom: 40px;
+    bottom: 20px;
     position: absolute;
     width: 100%;
 
     @media (max-width: $medium-break) {
         bottom: auto;
-        top: 320px;
+        top: 360px;
     }
 }
