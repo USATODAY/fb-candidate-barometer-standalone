@@ -5,7 +5,7 @@
 <div class="iapp-detail-summary iapp-entry-module">
     <h4 class="iapp-entry-module-header">Overall Facebook activity</h4>
     <div class="iapp-entry-details-large-number tri-down">
-        <h3 class="iapp-entry-details-large-number-text"><% print(interactions.toLocaleString()) %></h3>
+        <h3 class="iapp-entry-details-large-number-text"><%= interactions_pretty %></h3>
         
     </div>
     <div class="iapp-fb-unit-badge"> <img src="<% print(config.imageDir + "fb-icon.png") %>" alt="likes, shares, mentions">Likes, Shares, Mentions</div>
