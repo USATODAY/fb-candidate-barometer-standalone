@@ -1,16 +1,19 @@
-$itemSize: 60px;
+$itemSize: 90px;
 
 .iapp-politician-index-item {
     cursor: pointer;
-    margin: 0 9px;
+    margin: 0 9px 40px 9px;
     position: relative;
     text-align: center;
-    width: 100px;
+    width: 200px;
+    @media(max-width: $small-break) {
+        width: 120px;
+    }
 }
 
 .item-selected .iapp-politician-index-item {
     .iapp-politician-item-portrait {
-        opacity: 0.5;
+        // opacity: 0.5;
     }
     &.selected {
         .iapp-politician-item-portrait {
@@ -42,15 +45,19 @@ $itemSize: 60px;
 }
 
 .iapp-politician-header {
-    font-family: "Futura Today Light", Arial, sans-serif;
-    font-size: 0.8em;
+    font-family: "Futura Today Normal", Arial, sans-serif;
+    font-size: 1em;
     font-weight: 400;
     margin: 5px 0 10px 0;
 }
 
 .iapp-politician-item-trend {
     position: absolute;
-    right: 15px;
-    top: 35px;
-    width: 22px;
+    right: 40px;
+    top: 45px;
+    width: 36px;
+    @media(max-width: $small-break) {
+        right: 10px;
+        top: 50px;
+    }
 }

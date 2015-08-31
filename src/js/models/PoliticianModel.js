@@ -17,6 +17,7 @@ define([
             "slug": null,
             "image": null,
             "party": null,
+            "share_language": null,
 
             /***
              * holds collection of entries
@@ -26,9 +27,12 @@ define([
         initialize: function(attrs, options) {
             var slug = attrs.slug;
             var image = config.imageDir + slug + ".png";
+            var shareLanguage = "Who’s talking about " + this.get("name") + " on Facebook? Check out the USA TODAY/Facebook Candidate Barometer";
             this.set({
-                "image": image
+                "image": image,
+                "share_language": shareLanguage
             });
+
         },
         getEntries: function() {
             /***

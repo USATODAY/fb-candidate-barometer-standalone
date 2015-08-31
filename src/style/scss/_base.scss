@@ -18,9 +18,21 @@ body, html, article {
   width: 100%;
 }
 
+header, footer {
+    display: none;
+}
+
+article.padded-container.first-margin {
+    margin-top: 0 !important;
+}
+
 article {
+    background: url(http://www.gannett-cdn.com/experiments/usatoday/2015/08/fb-meter-standalone/img/wh-blur.jpg) no-repeat center center fixed;
+    background-size: cover;
   font-family: "Futura Today Bold", Arial,sans-serif;
   font-size: 100%;
+  overflow-x: hidden;
+  // overflow-y: auto;
   padding: 0 !important;
   position: relative;
   width: 100% !important;
@@ -40,8 +52,13 @@ article {
 }
 
 .iapp-page-wrap {
-    height: 977px;
-    overflow: hidden;
+    background-color: transparentize($new-blue, 0.1);
+    /* overflow-y: auto; */
+}
+
+//remove strange bug from static page
+.card-wrap-primary-suspender-sidebar-page {
+    display: none;
 }
 
 

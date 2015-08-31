@@ -17,22 +17,21 @@ define([
             var context = helpers.makeContext(this.model.toJSON());
             this.$el.append(this.template(context));
             this.mapView = new MapView({model: this.model});
-            this.$el.prepend(this.mapView.el);
+            this.$el.append(this.mapView.el);
             this.drawDemoOverview();
             this.drawDemoDetails();
             return this;
         },
         template: templates["EntryView.html"],
-        _getChartColors: function() {
-            var party = this.model.get("party");
-            return config.chartColors[party];
+        _getColors: function() {
+            return ["#f0f0f0", "#bdbdbd"];
         },
         className: "iapp-entry-wrapper",
         _barDimensions: {
-            width: 200,
+            width: 250,
             height: 180,
             barHeight: 20,
-            leftPadding: 35,
+            leftPadding: 50,
             rightPadding: 35
         },
         drawDemoOverview: function() {
@@ -40,7 +39,7 @@ define([
             var dimensions = this._barDimensions;
             var el = d3.select($el[0]);
 
-            var colors = ["#6D6E70", "#4A4A4A"];
+            var colors = this._getColors();
 
             var svg = el.append('svg')
                 .attr("width", dimensions.width)
@@ -78,9 +77,9 @@ define([
                 .attr("y", 10)
                 .attr("dy", "0.5em")
                 .attr("font-family", "Futura Today Light, Arial, sans-serif")
-                .attr("fill", "#4A4A4A")
+                .attr("fill", "white")
                 .attr("font-size", "12px")
-                .text("All");
+                .text("All ages");
 
             var percentLabel = svg.append("text")
                 .attr("y", dimensions.barHeight /2)
@@ -88,7 +87,7 @@ define([
                 .attr("dy", "0.5em")
                 .attr("font-family", "Futura Today Light, Arial, sans-serif")
                 .attr("font-size", "12px")
-                .attr("fill", "#4A4A4A")
+                .attr("fill", "white")
                 .text(function(d) {
                     return "100%";
                 });
@@ -98,7 +97,7 @@ define([
             var $el = this.$('.iapp-js-entry-demo-details'),
             dimensions = this._barDimensions,
             el = d3.select($el[0]),
-            colors = ["#6D6E70", "#4A4A4A"];
+            colors = this._getColors();
             
             var x = d3.scale.linear()
                 .domain([0, 100])
@@ -146,18 +145,21 @@ define([
                 .attr("dy", "0.5em")
                 .attr("font-family", "Futura Today Light, Arial, sans-serif")
                 .attr("font-size", "12px")
-                .attr("fill", "#4A4A4A")
+                .attr("fill", "white")
                 .text(function(d) {
                     return d.age;
                 });
 
             var percentLabel = ageGroup.append("text")
                 .attr("y", dimensions.barHeight /2)
-                .attr("x", dimensions.width - 30)
+                .attr("x", function(d) {
+                    var percent = d.w + d.m;
+                    return (dimensions.leftPadding + 10 + x(percent));
+                })
                 .attr("dy", "0.5em")
                 .attr("font-family", "Futura Today Light, Arial, sans-serif")
                 .attr("font-size", "12px")
-                .attr("fill", "#4A4A4A")
+                .attr("fill", "white")
                 .text(function(d) {
                     var percent = d.w + d.m;
                     percent = Math.round( percent * 10) / 10;

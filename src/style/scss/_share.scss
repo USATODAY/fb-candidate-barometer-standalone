@@ -1,0 +1,25 @@
+.iapp-share-button {
+    cursor: pointer;
+    display: block;
+    height: 60px;
+    float: left;
+    overflow: hidden;
+    width: 60px;
+    img {
+        display: block;
+    }
+    @media(max-width: $medium-break) {
+        height: 40px;
+        width: 40px;
+    }
+}
+
+.iapp-header-share-wrap {
+    display: inline-block;
+    float: right;
+    @media(max-width: $medium-break) {
+        display: block;
+        float: none;
+        margin-top: 10px;
+    }
+}

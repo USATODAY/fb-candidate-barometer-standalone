@@ -18,6 +18,8 @@ define([
             dateObj: null,
             //integer
             interactions: null,
+            //string
+            interaction_pretty: null,
             //float
             men_percent: null,
             //float
@@ -49,8 +51,12 @@ define([
                 'dateObj': dateObj,
                 'name': options.props.name,
                 'slug': options.props.slug,
-                'party': options.props.party
+                'party': options.props.party,
+                'interactions_pretty': this._getPrettyInteractions(this.get('interactions'))
             });
+        },
+        _getPrettyInteractions: function(interactions) {
+            return interactions.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         },
         _getDate: function(dateString) {
             var dateArray = dateString.split("-");

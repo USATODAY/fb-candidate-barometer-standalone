@@ -1,0 +1,20 @@
+.iapp-line {
+    fill: none;
+    stroke: $light-grey;
+    stroke-width: 1.5px;
+ }
+
+.iapp-chart-point {
+    fill: $light-grey;
+}
+
+.iapp-weeks-chart {
+    bottom: 20px;
+    position: absolute;
+    width: 100%;
+
+    @media (max-width: $medium-break) {
+        bottom: auto;
+        top: 360px;
+    }
+}

@@ -1,37 +1,120 @@
+.iapp-entry {
+    margin-bottom: 260px;
+    @media (max-width: $medium-break) {
+        margin-bottom: 100px;
+    }
+}
+
+.iapp-entry-wrapper {
+    @extend .group;
+    height: 100%;
+    margin: 0 auto;
+    max-width: 1000px;
+    overflow: auto;
+    width: calc(100% - 140px);
+    @media(max-width: $small-break) {
+        width: 90%;
+    }
+}
+
 .iapp-entry-details {
-    background: $extra-light-grey;
     display: table-cell;
-    float: right;
-    padding: 30px;
+    float: left;
+    margin-right: 20px;
     width: 305px;
     height: 100%;
 
-    @media (max-width: 950px) {
-        height: 300px;
-        padding: 15px 30px;
+    @media (max-width: $medium-break) {
+        margin-bottom: 30px;
+        margin-right: 0;
+        // padding: 15px 30px;
         width: 100%;
     }
-    &.republican { background: #FDF4F5;}
-    &.democrat { background: #EBF2F6;}
+}
+
+.iapp-entry-module {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    padding: 30px;
 }
 
 .iapp-entry-details-header {
-    font-family: "Futura Today DemiBold", Arial, sans-serif;
+    font-family: "Futura Today Normal", Arial, sans-serif;
+    text-align: center;
 }
 
 .republican .iapp-entry-details-header { color: $red2; }
 .democrat .iapp-entry-details-header { color: $blue2; }
 
-.iapp-entry-details-subheader {
-    border-bottom: solid 1px $dark-grey;
+.iapp-entry-module-header {
     font-family: "Futura Today Light", Arial, sans-serif;
     margin: 0;
+    text-align: center;
 }
 
 .iapp-entry-details-large-number {
+    background: $light-grey;
+    border-radius: 2px;
+    color: $dark-grey;
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.5);
     font-family: "Futura Today Light", Arial, sans-serif;
     font-size: 2em;
-    margin: 10px 0;
+    margin: 10px auto 15px auto;
+    max-width: 300px;
+    position: relative;
+    text-align: center;
+
+    h3 {
+        font-family: "Futura Today Light", Arial, sans-serif;
+        font-size: 0.8em;
+        margin: 0;
+    }
+    .iapp-arrow-down {
+        bottom: -10px;
+        left: 50%;
+        position: absolute;
+    }
+}
+
+/* Required for Down Triangle */
+  .tri-down:before, .tri-down:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+    border-bottom: 0;
+  }
+
+  /* Stroke */
+  .tri-down:before {
+    bottom: -12px;
+    left: 50%;
+
+    /* If 1px darken stroke slightly */
+    border-top-color: rgba(0, 0, 0, 0.5);
+    border-width: 10px;
+    border-bottom-color: $light-grey;
+    transform: translate(-50%, 0);
+  }
+
+  /* Fill */
+  .tri-down:after {
+    bottom: -10px;
+    left: 50%;
+    border-top-color: $light-grey;
+    border-width: 10px;
+    transform: translate(-50%, 0);
+  }
+
+.iapp-arrow-down {
+    display:none;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;	
+    border-top: 10px solid $light-grey;
 }
 
 .iapp-entry-details-large-number-unit {
@@ -39,7 +122,7 @@
 }
 
 .iapp-entry-details-demographics-overall {
-    background-color: $light-grey;
+
     padding-top: 10px;
 }
 
@@ -66,28 +149,31 @@
 }
 
 
-.iapp-entry-wrapper {
-    height: calc(100%);
-}
 
 .iapp-entry-details-demographics {
-    border: solid 1px $light-grey;
     margin-top: 20px;
-    width: 245px;
+    // width: 245px;
+    max-width: 300px;
 
-    @media (max-width: 950px) {
-        float: right;
+    @media (max-width: $medium-break) {
+        // float: left;
+        // float: right;
         margin-top: 0;
+        max-width: 100%;
+        width: 100%;
     }
 }
 
 .iapp-detail-summary {
     max-width: 300px;
 
-    @media (max-width: 950px) {
-        float: left;
+    @media (max-width: $medium-break) {
+        // float: left;
+        max-width: 100%;
+        margin-bottom: 220px;
+        width: 100%;
     }
-    @media (min-width: 950px) {
+    @media (min-width: $medium-break) {
         &.slide {
             margin-top: 200px;
         }
@@ -100,8 +186,23 @@
 }
 
 
-.iapp-demo-headers-female {color: $medium-grey;}
-.iapp-demo-headers-male {color: $dark-grey;}
+.iapp-demo-headers-female {color: #f0f0f0;}
+.iapp-demo-headers-male {color: #bdbdbd;}
+
+.iapp-fb-unit-badge {
+    background-color: #4A6DB4;
+    border-radius: 2px;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    padding: 5px;
+    vertical-align: top;
+    width: 210px;
+    img {
+        margin-right: 5px;
+        width: 16px;
+    }
+}
 
 /******
 *Map styles
@@ -111,12 +212,13 @@
 .iapp-entry-map {
     float: left;
     // position: relative;
-    padding-top: 30px;
-    width: 654px;
-    @media (max-width: 950px) {
+    // padding-top: 30px;
+    @media (max-width: $medium-break) {
+        clear: both;
         float: none;
-        margin: 0 auto;
-        padding-top: 0;
+        margin: 20px auto 0 auto;
+        // padding-top: 0;
+        width: 100%;
     }
 }
 
@@ -124,7 +226,7 @@
     font-family: "Futura Today Normal", Arial, sans-serif;
     font-size: 1.25em;
     margin-left: 25px;
-    @media (max-width: 950px) {
+    @media (max-width: $medium-break) {
         font-size: 1.2em;
         margin: 10px 0;
     }

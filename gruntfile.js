@@ -26,6 +26,7 @@ module.exports = function(grunt) {
     "imagesloaded": "../../bower_components/imagesloaded/imagesloaded.pkgd",
     "mapbox": '../../bower_components/mapbox.js/mapbox.uncompressed',
     "velocity": '../../bower_components/velocity/velocity',
+    "hammerjs": '../../bower_components/hammerjs/hammer',
     'moment': '../../bower_components/moment/moment',
     'textures': '../../bower_components/textures/textures'
   };

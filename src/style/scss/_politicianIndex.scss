@@ -1,9 +1,9 @@
 .iapp-politician-index-wrap {
-    background: white;
+
     display: flex;
+    height: 100%;
     flex-direction: row;
     flex-wrap: wrap;
-    max-height: 25px;
     overflow: hidden;
     padding: 25px 0 25px 0;
     position: relative;
@@ -12,17 +12,22 @@
 
 
 .iapp-politician-index {
-    background-color: white;
+    background: $new-blue;
+    color: white;
     @include BoxShadowHelper(2);
-    position: relative;
+    min-height: 100%;
+    padding-bottom: 50px;
+    position: absolute;
     width: 100%;
     z-index: 505;
 }
 
 .iapp-politician-index-show-button {
-    background-color: $medium-grey;
-    color: white;
-    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-bottom: solid 1px $dark-grey;
+    @include BoxShadowHelper(1);
+    color: $dark-grey;
+    // cursor: pointer;
     font-family: "Futura Today Light", Arial, sans-serif;
     // opacity: 0.8;
     padding: 15px 5px;
@@ -36,6 +41,14 @@
     }
 }
 
+.iapp-politician-index-sort-indicator {
+    border-radius: 50%;
+    border: solid 1px white;
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+}
+
 .iapp-politician-index-sort-buttons {
     display: none;
 }
@@ -43,7 +56,12 @@
 .expanded .iapp-politician-index-sort-buttons {
     display: block;
     margin: 0 auto;
-    width: 330px;
+    width: 350px;
+}
+
+.iapp-politician-index-sort-text {
+    display: inline-block;
+    transform: translate(0, -6px);
 }
 
 .iapp-politician-index-sort-label {
@@ -57,8 +75,9 @@
     margin: 0 5px;
 
     &.selected {
-        background: $medium-grey;
-        color: white;
+        .iapp-politician-index-sort-indicator {
+            background-color: white;
+        }
     }
 }
 

@@ -8,7 +8,9 @@ define([
         'use strict';
         
         return {
-            trackEvent: function (trackLabel, destinationUrl) {},
+            trackEvent: function (trackLabel, destinationUrl) {
+                console.log("track event: " + trackLabel);
+            },
             trackPageView: function (infoObj) {},
         };
     });

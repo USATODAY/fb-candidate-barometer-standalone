@@ -1,12 +1,20 @@
 .iapp-intro-wrap {
-    background: url(http://www.gannett-cdn.com/experiments/usatoday/2015/08/fb-meter-standalone/img/wh.jpg) no-repeat center center fixed;
+    background: url(http://www.gannett-cdn.com/experiments/usatoday/2015/08/fb-meter-standalone/img/wh-blur.jpg) no-repeat center center fixed;
     background-size: cover;
     bottom: 0;
     color: white;
-    position: absolute;
+    position: fixed;
     top: 0;
+    transform: translate(0, 0);
     width: 100%;
     z-index: 600;
+}
+
+.iapp-intro-inner-wrap {
+    background: transparentize($new-blue, 0.2);
+    height: 100%;
+    position: absolute;
+    width: 100%;
 }
 
 .iapp-intro-bg-one, .iapp-intro-bg-two {
@@ -26,11 +34,18 @@
     top: 0;
 }
 
+.iapp-button-label {
+    font-family: "Futura Today Light", Arial, sans-serif;
+    margin-top: 2em;
+    text-align: center;
+}
+
 .iapp-intro-begin-button {
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    /* left: 50%; */
+    /* position: absolute; */
+    /* top: 50%; */
+    /* transform: translate(-50%, -50%); */
+    margin-top: 1em;
 }
 
 .iapp-intro-chatter {
@@ -43,8 +58,36 @@
 
 .iapp-intro-header {
     font-family: "Futura Today Light", Arial, sans-serif;
-    font-size: 2em;
-    margin: 2em auto;
+    font-size: 3em;
+    margin: 0.5em auto 0 auto;
     text-align: center;
+    text-transform: uppercase;
     width: 90%;
+
+    @media (max-width: $small-break) {
+        font-size: 2em;
+    }
+}
+
+.iapp-intro-sub-header {
+    font-family: "Futura Today Light", Arial, sans-serif;
+    font-size: 2em;
+    margin: 0 auto 1em auto;
+    text-align: center;
+    text-transform: uppercase;
+    width: 90%;
+    @media (max-width: $small-break) {
+        font-size: 1.5;
+    }
+}
+
+.iapp-intro-map {
+    margin: 0 auto;
+    width: 200px;
+    img {
+        width: 100%;
+    }
+    @media (max-width: $small-break) {
+        width: 100px
+    }
 }

@@ -15,14 +15,15 @@ define(
     
     return Backbone.View.extend({
         initialize: function() {
+            this.listenTo(Backbone, "window:resize", this.redraw);
             this.dataManager = new DataManager(config.dataDir + "states.json");
             this.dataUrl = this.dataManager.getDataURL();
             this.render();
         },
-        className: "iapp-entry-map",
+        className: "iapp-entry-map iapp-entry-module",
         dataUrl: null,
         render: function() {
-            this.$el.append("<h2 class='iapp-map-header'>States with highest and lowest engagement</h2>");
+            this.$el.append("<h4 class='iapp-entry-module-header'>States with highest and lowest engagement</h4>");
             this.drawMap();
         },
         drawMap: function() {
@@ -35,12 +36,12 @@ define(
             }
             var $el = this.$el;
 
-            var width = 580,
-                height = 400,
+            var width = this.getWidth(),
+                height = this.getWidth() / 1.2,
                 padding = 50;
             
             var chartColors;
-            var lightGreyColor = "#DEDEDE";
+            var lightGreyColor = "#C5C5C5";
             if (this.model.get("party")) {
                 chartColors = config.chartColors[this.model.get("party")];
             } else {
@@ -50,7 +51,7 @@ define(
 
 
             var projection = d3.geo.albersUsa()
-                .scale(750)
+                .scale(width * 1.2)
                 .translate([width / 2, (height / 2) - 30]);
 
             var path = d3.geo.path()
@@ -204,6 +205,22 @@ define(
             });
 
 
+        },
+        redraw: function() {
+            this.svg.remove();
+            _.bind(_.throttle(this.drawMap, 250), this)();
+        },
+        getWidth: function() {
+            var width,
+            winWidth = window.innerWidth;
+            if (winWidth > 1110) {
+                width = 540;
+            } else if (winWidth > 760) {
+                width = 480;
+            } else {
+                width = winWidth * 0.7;
+            }
+            return width;
         },
         _roundNumber: function(num) {
             return Math.round(num * 100) / 100;

@@ -1,23 +1,45 @@
 .iapp-entries-date-wrap {
-    border-bottom: solid 1px $light-grey;
-    padding: 15px 0 10px 0;
+    @media (max-width: $medium-break) {
+        background: $new-blue;
+        bottom: 0;
+        height: 80px;
+        position: fixed;
+        width: 100%;
+        z-index: 540;
+    }
+}
+
+h3.iapp-entries-date {
+    display: none;
+    font-family: "Futura Today Light", Arial, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    @media (max-width: $medium-break) {
+        display: block;
+    }
 }
 
 .iapp-loader {
     left: 50%;
     position: absolute;
-    top: 50%;
+    top: 200px;
     transform: translate(-50%, -50%);
 }
 
 .iapp-entries-wrap {
-    height: 707px;
-    position: absolute;
-    top: 260px;
+    // background: transparentize($new-blue, 0.1);
+    color: white;
+    min-height: 100%;
+    overflow: hidden;
+    position: relative;
+    top: 0;
     width: 100%;
+    @media (max-width: $medium-break) {
+        padding-bottom: 80px;
+    }
 
-    @media (max-width: 950px) {
-        top: 210px;
+    &.loading {
+        overflow: visible;
     }
 }
 
@@ -29,13 +51,89 @@
 }
 
 .iapp-entries-date-selector {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    @include BoxShadowHelper(2);
     cursor: pointer;
+    height: 60px;
+    position: fixed;
+    top: 50%;
+    transition: all 250ms ease;
+    transform: translate(0, -50%);
+    width: 60px;
+    img {
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.8);
+        @include BoxShadowHelper(3);
+    }
+
+    @media(max-width: $medium-break) {
+        position: absolute;
+    }
+}
+
+.iapp-entries-date-selector-label {
+    text-transform: uppercase;
+    font-family: "Futura Today Light";
+    text-align: center;
+    font-size: 0.8em;
+    transform: translate(0, 70px);
+    @media(max-width: $medium-break) {
+        display: none;
+    }
 }
 
 .iapp-entries-date-previous {
-    float: left;
+    left: 10px;
 }
 
 .iapp-entries-date-next {
-    float: right;
+    right: 10px;
+}
+
+.iapp-entries-candidate-select-button {
+    background: rgba(255, 255, 255, 0.5);
+    color: $dark-grey;
+    cursor: pointer;
+    font-family: "Futura Today Normal", Arial, sans-serif;
+    padding: 15px 0 10px 0;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 250ms ease;
+    width: 100%;
+    &:hover {
+        background: rgba(255, 255, 255, 0.8);
+    }
+}
+
+.iapp-candidate-info {
+    margin: 30px auto;
+    width: 320px;
+    .iapp-politician-item-portrait, .iapp-entries-info {
+        display: inline-block;
+        margin: 0 5px;
+        text-align: left;
+        vertical-align: top;
+    }
+    .iapp-entry-details-header {
+        margin: 10px 0 0 0;
+        text-align: left;
+        vertical-align: top;
+    }
+    .iapp-entries-date {
+        font-family: "Futura Today Normal", Arial, sans-serif;
+        margin: 0;
+        vertical-align: top;
+        @media (max-width: $medium-break) {
+            display: none;
+        }
+    }
+
+
 }

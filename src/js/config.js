@@ -10,12 +10,14 @@ define(["jquery"], function(jQuery) {
     var imageDir = "http://www.gannett-cdn.com/experiments/usatoday/2015/08/fb-meter-standalone/img/";
 
     //set project default share language here
-    var defaultShareLanguage = "";
+    var defaultShareLanguage = "Which 2016ers are trending on Facebook? Check out the USA TODAY/Facebook Candidate Barometer";
     var defaultShareImage = imageDir + "fb-post.jpg";
 
+    var projectTitle = "2016 USA TODAY/FACEBOOK CANDIDATE BAROMETER";
+
     var chartColors = {
-        "republican": ["#A97F84", "#742B31"],
-        "democrat":  ["#90B8CA", "#1C4255"]
+        "republican": ["#fc9292", "#c41d23"],
+        "democrat":  ["#66afd8", "#153368"]
     };
 
     /******
@@ -93,6 +95,7 @@ define(["jquery"], function(jQuery) {
         defaultShareImage: defaultShareImage,
         isEmbed: _getIsEmbed(),
         getModuleType: _getModuleType,
-        chartColors: chartColors
+        chartColors: chartColors,
+        projectTitle: projectTitle
     };
 });

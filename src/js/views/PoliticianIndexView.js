@@ -4,15 +4,18 @@ define([
     'backbone',
     'imagesloaded',
     'config', 
+    'router',
     'templates',
     'velocity',
     'views/PoliticianItemView'
-], function(jQuery, _, Backbone, imagesLoaded, config, templates, Velocity, PoliticianItemView) {
+], function(jQuery, _, Backbone, imagesLoaded, config, router, templates, Velocity, PoliticianItemView) {
     return Backbone.View.extend({
         initialize: function() {
             this.listenTo(Backbone, "menu:close", this.unExpand);
+            this.listenTo(Backbone, "menu:open", this.expand);
             this.listenTo(Backbone, "politician:set", this.politicianSet);
-            this.listenTo(Backbone, "window:resize", this.resize);
+            this.listenTo(Backbone, "router:candidate", this.unExpand);
+            this.listenTo(Backbone, "router:candidateSelect", this.expand);
         },
         template: templates["politicianIndex.html"],
         className: "iapp-politician-index expanded",
@@ -40,7 +43,6 @@ define([
             this.$isotopeEl.imagesLoaded().progress( function() {
               _this.$isotopeEl.isotope('layout');
             });
-            this.resize();
             return this;
         },
         renderSubView: function(model) {
@@ -65,27 +67,20 @@ define([
         },
         expand: function() {
             //animate to show all
-            var height = this._getHeight();
-            this.$('.iapp-politician-index-wrap').velocity({"max-height": height.openHeight}, {duration: 400, easing: "swing"});
-            this.$el.addClass('expanded');
-            this.$('.iapp-politician-index-show-button').text("Select a candidate");
+            this.$el.velocity({"translateY": "0%"}, {duration: 400, easing: "swing"});
             this._expanded = true;
         },
         unExpand: function() {
-            var height = this._getHeight();
-            this.$('.iapp-politician-index-wrap').velocity({"max-height": height.closedHeight}, {duration: 400, easing: "swing"});
-            this.$el.removeClass('expanded');
-            this.$('.iapp-politician-index-show-button').text("See all candidates");
-            this._expanded = false;
+            this.$el.velocity({"translateY": "-120%"}, {duration: 400, easing: "swing"});
         },
         resize: function() {
-            var height = this._getHeight();
-            if (this._expanded) {
-                height = height.openHeight;
-            } else {
-                height = height.closedHeight;
-            }
-            this.$(".iapp-politician-index-wrap").css({"max-height": height});
+            // var height = this._getHeight();
+            // if (this._expanded) {
+                // height = height.openHeight;
+            // } else {
+                // height = height.closedHeight;
+            // }
+            // this.$(".iapp-politician-index-wrap").css({"max-height": height});
         },
         _expanded: true,
         _getHeight: function() {
@@ -105,7 +100,6 @@ define([
         sortByName: function() {
             this.$(".selected").removeClass("selected");
             this.$(".iapp-sort-button-name").addClass("selected");
-            console.log("name");
             this.$isotopeEl.isotope({sortBy: "name", sortAscending: true});
         },
         sortByParty: function() {

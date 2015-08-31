@@ -2,10 +2,12 @@ define([
     'jquery', 
     'underscore', 
     'backbone',
+    'router',
     'config', 
     'helpers',
     'templates',
-], function(jQuery, _, Backbone, config, helpers, templates) {
+    'api/analytics'
+], function(jQuery, _, Backbone, router, config, helpers, templates, Analytics) {
     return Backbone.View.extend({
         initialize: function() {
         },
@@ -33,6 +35,8 @@ define([
         },
         onClick: function() {
             var _this = this;
+            router.navigate('candidate/' + this.model.get('slug'));
+            Analytics.trackEvent("fb-barometer-politician-selected");
             Backbone.trigger("politician:set", this.model);
             Backbone.trigger("menu:close", this.model);
             _.defer(function() {
