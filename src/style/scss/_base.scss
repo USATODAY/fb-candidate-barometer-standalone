@@ -56,6 +56,11 @@ article {
     /* overflow-y: auto; */
 }
 
+//remove strange bug from static page
+.card-wrap-primary-suspender-sidebar-page {
+    display: none;
+}
+
 
 /*******
 remove top margin when we remove header
