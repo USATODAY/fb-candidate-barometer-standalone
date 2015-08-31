@@ -16,7 +16,6 @@ define([
                 Backbone.trigger("router:home");
             },
             candidateSelect: function() {
-                console.log("candidate select route");
                 Backbone.trigger("router:candidateSelect");
             },
             candidate: function(candidateSlug) {

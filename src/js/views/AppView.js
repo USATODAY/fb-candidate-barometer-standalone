@@ -27,7 +27,6 @@ define([
         render: function() {
             //create share model
             this.shareModel = new ShareModel();
-            console.log(this.shareModel);
 
             var context = helpers.makeContext({share: this.shareModel.toJSON()});
             this.$el.append(this.template(context));
