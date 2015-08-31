@@ -10,7 +10,7 @@ define(["jquery"], function(jQuery) {
     var imageDir = "http://www.gannett-cdn.com/experiments/usatoday/2015/08/fb-meter-standalone/img/";
 
     //set project default share language here
-    var defaultShareLanguage = "";
+    var defaultShareLanguage = "Which 2016ers are trending on Facebook? Check out the USA TODAY/Facebook Candidate Barometer";
     var defaultShareImage = imageDir + "fb-post.jpg";
 
     var projectTitle = "2016 USA TODAY/FACEBOOK CANDIDATE BAROMETER";

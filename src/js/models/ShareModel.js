@@ -9,7 +9,7 @@ define(
 
     return Backbone.Model.extend( {
         defaults: {
-            'default_share_language': '',
+            'default_share_language': config.defaultShareLanguage,
             'still_image': '',
             'fbShare': '',
             'twitterShare': '',
@@ -31,13 +31,12 @@ define(
                 'fbShare': this.createFbShareURL(baseURL),
                 'twitterShare': this.createTwitterShareURL(baseURL),
                 'share_language': config.defaultShareLanguage,
-                'encodedShare': encodeURIComponent(this.get('default_share_language')),
+                'encodedShare': encodeURIComponent(config.defaultShareLanguage),
                 'fb_id': config.fb_app_id,
                 'email_link': this.createEmailLink(baseURL)
                 
             }); 
 
-           this.listenTo(Backbone, "set:lab", this.onSetLab);
           
            
         },
@@ -82,6 +81,10 @@ define(
                 'email_link': this.createEmailLink(shareUrl)
             });
 
+        },
+        setCandidate: function(candidateModel) {
+            this.updateUrls(candidateModel.get('slug'));
+            this.updateLanguage(candidateModel.get('share_language'));
         }
     });
 

@@ -27,6 +27,7 @@ define([
         render: function() {
             //create share model
             this.shareModel = new ShareModel();
+            console.log(this.shareModel);
 
             var context = helpers.makeContext({share: this.shareModel.toJSON()});
             this.$el.append(this.template(context));
@@ -58,7 +59,7 @@ define([
             }
             this.entriesView = new EntriesView({model: politicianModel});
             this.$el.append(this.entriesView.el);
-            this.shareModel.updateUrls(politicianModel.get('slug'));
+            this.shareModel.setCandidate(politicianModel);
             var context = helpers.makeContext({share: this.shareModel.toJSON()});
             this.renderShare(context);
         },
