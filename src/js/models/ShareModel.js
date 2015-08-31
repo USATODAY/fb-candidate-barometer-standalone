@@ -10,7 +10,7 @@ define(
     return Backbone.Model.extend( {
         defaults: {
             'default_share_language': config.defaultShareLanguage,
-            'still_image': '',
+            'still_image': config.defaultShareImage,
             'fbShare': '',
             'twitterShare': '',
             'share_language': '',  
