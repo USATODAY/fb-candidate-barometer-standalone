@@ -6,8 +6,8 @@ $itemSize: 90px;
     position: relative;
     text-align: center;
     width: 200px;
-    @media(max-width: $small-break) {
-        width: 120px;
+    @media(max-width: 440px) {
+        width: calc(50% - 18px);
     }
 }
 
@@ -56,8 +56,8 @@ $itemSize: 90px;
     right: 40px;
     top: 45px;
     width: 36px;
-    @media(max-width: $small-break) {
-        right: 10px;
+    @media(max-width: 440px) {
+        right: 20%;
         top: 50px;
     }
 }

@@ -34,6 +34,7 @@ h3.iapp-entries-date {
     position: relative;
     top: 0;
     width: 100%;
+    z-index: 104;
     @media (max-width: $medium-break) {
         padding-bottom: 80px;
     }
@@ -120,11 +121,20 @@ h3.iapp-entries-date {
         margin: 0 5px;
         text-align: left;
         vertical-align: top;
+        @media(max-width: $medium-break) {
+            display: block;
+            margin: 0 auto;
+        }
     }
     .iapp-entry-details-header {
         margin: 10px 0 0 0;
         text-align: left;
         vertical-align: top;
+        @media(max-width: $medium-break) {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+        }
     }
     .iapp-entries-date {
         font-family: "Futura Today Normal", Arial, sans-serif;

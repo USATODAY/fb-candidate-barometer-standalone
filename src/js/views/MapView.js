@@ -167,7 +167,7 @@ define(
 
                     var key = svg.append("g")
                         .attr("class", "map-key")
-                        .attr("transform", "translate(" + 1 + ", " + (height - 20) + ")");
+                        .attr("transform", "translate(" + ((width/2) - 80) + ", " + (height - 20) + ")");
 
                     var keyGroup1 = key.append("g")
                         .attr("transform", "translate(0, 0)");
@@ -183,7 +183,8 @@ define(
                         .attr("dy", keySize)
                         .attr("font-family", "Futura Today Light, Arial, sans-serif")
                         .attr("font-size", "12px")
-                        .text("LOWEST");
+                        .attr('fill', 'white')
+                        .text("Lowest");
 
                     var keyGroup2 = key.append("g")
                         .attr("transform", "translate(100, 0)");
@@ -199,7 +200,8 @@ define(
                         .attr("dy", keySize)
                         .attr("font-family", "Futura Today Light, Arial, sans-serif")
                         .attr("font-size", "12px")
-                        .text("HIGHEST");
+                        .attr('fill', 'white')
+                        .text("Highest");
                 }
 
             });

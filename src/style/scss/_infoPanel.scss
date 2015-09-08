@@ -43,7 +43,10 @@
 .iapp-info-button {
     cursor: pointer;
     position: absolute;
-    top: 200px;
+    top: 190px;
     right: 25px;
     z-index: 550;
+    @media (max-width: $medium-break) {
+        top: 90px;
+    }
 }
