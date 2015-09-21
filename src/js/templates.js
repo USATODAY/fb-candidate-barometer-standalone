@@ -17,7 +17,7 @@ __p += '\n\n<div class="iapp-detail-summary iapp-entry-module">\n    <h4 class="
 ((__t = ( interactions_pretty )) == null ? '' : __t) +
 '</h3>\n        \n    </div>\n    <div class="iapp-fb-unit-badge"> <img src="';
  print(config.imageDir + "fb-icon.png") ;
-__p += '" alt="likes, shares, mentions">Likes, Shares, Mentions</div>\n\n</div>\n<div class="iapp-entry-details-demographics iapp-entry-module">\n    <h4 class="iapp-entry-module-header">Who\'s in the conversation</h4>\n    <div class="iapp-entry-details-demographics-overall">\n        <div class="iapp-entry-details-demographics-overall-headers">\n            <span class="iapp-demo-headers-female">Female</span>\n            <span class="iapp-demo-headers-male">Male</span>\n        </div>\n        <div class="iapp-entry-details-demographics-overview-bar iapp-js-entry-demo-overview"></div>\n    </div>\n    <div class="iapp-entry-details-demographics-details iapp-js-entry-demo-details"></div>\n</div>\n\n\n';
+__p += '" alt="likes, comments, shares, and posts">likes, comments, shares, & posts</div>\n\n</div>\n<div class="iapp-entry-details-demographics iapp-entry-module">\n    <h4 class="iapp-entry-module-header">Who\'s in the conversation</h4>\n    <div class="iapp-entry-details-demographics-overall">\n        <div class="iapp-entry-details-demographics-overall-headers">\n            <span class="iapp-demo-headers-female">Female</span>\n            <span class="iapp-demo-headers-male">Male</span>\n        </div>\n        <div class="iapp-entry-details-demographics-overview-bar iapp-js-entry-demo-overview"></div>\n    </div>\n    <div class="iapp-entry-details-demographics-details iapp-js-entry-demo-details"></div>\n</div>\n\n\n';
  if (!config.isMobile) { ;
 __p += '\n</section>\n';
 };

@@ -20,6 +20,8 @@
     @media(max-width: $medium-break) {
         display: block;
         float: none;
-        margin-top: 10px;
+        margin: 10px auto 0 auto;
+        width: 80px;
     }
+
 }
