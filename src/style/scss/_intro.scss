@@ -13,6 +13,7 @@
 .iapp-intro-inner-wrap {
     background: transparentize($new-blue, 0.2);
     height: 100%;
+    overflow-y: auto;
     position: absolute;
     width: 100%;
 }
