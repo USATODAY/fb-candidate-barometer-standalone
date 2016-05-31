@@ -54,6 +54,12 @@
     width: 100%;
 }
 
+.iapp-app-disclaimer {
+  font-family: "Futura Today Normal", Arial,sans-serif;
+  font-size: 1em;
+  // padding-bottom: 1em;
+}
+
 /******
 *app header
 ******/
@@ -61,16 +67,18 @@
 .iapp-app-header {
     background: $new-blue;
     color: white;
-    height: 100px;
+    // height: 100px;
     margin-top: 0;
+    margin-bottom: 0;
     @media(max-width: $medium-break) {
-        height: 150px;
+        // height: 150px;
     }
 }
 
 .iapp-app-header-inner-wrap {
     margin: 0 auto;
     padding: 30px 0;
+    position: relative;
     width: 90%;
 }
 

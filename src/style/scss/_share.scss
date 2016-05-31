@@ -15,8 +15,10 @@
 }
 
 .iapp-header-share-wrap {
-    display: inline-block;
-    float: right;
+    bottom: 0;
+    position: absolute;
+    // float: right;
+    right: 0;
     @media(max-width: $medium-break) {
         display: block;
         float: none;

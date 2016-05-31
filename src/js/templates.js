@@ -31,7 +31,7 @@ this["templates"]["appView.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="iapp-app-header">\n    <div class="iapp-app-header-inner-wrap">\n        <h3 class="iapp-app-header-title">2016 USA TODAY/Facebook Candidate Barometer</h3>\n        <div class="iapp-header-share-wrap"></div>\n    </div>\n</div>\n\n<div id=\'iapp-map-tooltip\' class=\'iapp-hidden iapp-map-tooltip\'> </div>\n<img class=\'iapp-info-button\' src=\'' +
+__p += '<div class="iapp-app-header">\n    <div class="iapp-app-header-inner-wrap">\n        <h3 class="iapp-app-header-title">2016 USA TODAY/Facebook Candidate Barometer</h3>\n        <h4 class="iapp-app-disclaimer">Note: The barometer will no longer be updated as of May 31.</h4>\n        <div class="iapp-header-share-wrap"></div>\n    </div>\n</div>\n\n<div id=\'iapp-map-tooltip\' class=\'iapp-hidden iapp-map-tooltip\'> </div>\n<img class=\'iapp-info-button\' src=\'' +
 ((__t = (config.imageDir)) == null ? '' : __t) +
 'info-icon.png\' alt=\'info\'>\n';
 
