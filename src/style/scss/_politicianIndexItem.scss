@@ -35,6 +35,8 @@ $itemSize: 90px;
 
     &.republican {border: solid 3px $red2;}
     &.democrat {border: solid 3px $blue2;}
+    &.green {border: solid 3px $green;}
+    &.libertarian {border: solid 3px $yellow;}
 }
 
 .iapp-politician-item-portrait-inner {

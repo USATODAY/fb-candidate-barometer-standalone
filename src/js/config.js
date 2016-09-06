@@ -17,7 +17,9 @@ define(["jquery"], function(jQuery) {
 
     var chartColors = {
         "republican": ["#fc9292", "#c41d23"],
-        "democrat":  ["#66afd8", "#153368"]
+        "democrat":  ["#66afd8", "#153368"],
+        "libertarian": ["#f6df99", "#f6b900"],
+        "green": ["#658e65", "#388E3C"]
     };
 
     /******
