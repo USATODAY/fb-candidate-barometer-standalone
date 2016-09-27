@@ -84,7 +84,7 @@ __p += '" alt="' +
  } ;
 __p += '\n    </div>\n  </div>\n  <div class="iapp-entries-info">\n  <h2 class="iapp-entry-details-header">' +
 ((__t = ( name )) == null ? '' : __t) +
-'</h2>\n   <p class="iapp-entries-date">Week of ' +
+'</h2>\n   <p class="iapp-entries-date">Week ending ' +
 ((__t = ( date )) == null ? '' : __t) +
 '</p>\n   </div>\n</div>\n<div class="iapp-weeks-chart"></div>\n<div class="iapp-entry"></div>\n';
 
